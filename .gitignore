@@ -114,3 +114,5 @@ dist
 package-lock.json
 
 .clinic
+
+.DS_Store
