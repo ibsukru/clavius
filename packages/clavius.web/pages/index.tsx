@@ -1,7 +1,13 @@
-import { DealWithIt } from '../components'
+import { Layout, Navigation, Headline, Rails } from '../components'
 
 const Index = () => {
-  return <DealWithIt text="🖼️ Hello world" />
+  return (
+    <Layout>
+      <Navigation />
+      <Headline />
+      <Rails />
+    </Layout>
+  )
 }
 
 export default Index
