@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dealWithIt Hello world 1`] = `"Hello world (▀̿Ĺ̯▀̿ ̿)."`;
+
+exports[`dealWithIt undefined 1`] = `"(▀̿Ĺ̯▀̿ ̿)"`;

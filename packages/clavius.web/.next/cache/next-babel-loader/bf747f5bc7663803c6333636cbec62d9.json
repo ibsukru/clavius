@@ -1,0 +1,1 @@
+{"ast":null,"code":"import useThemeContext from './useThemeContext';\nexport default useThemeContext;","map":null,"metadata":{},"sourceType":"module"}

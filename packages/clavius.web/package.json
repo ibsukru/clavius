@@ -1,0 +1,25 @@
+{
+  "name": "clavius.web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ibsukru",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "next -- -p 1123",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "js-cookie": "^2.2.1",
+    "clavius.lib": "1.0.0",
+    "next": "^10.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^2.2.6",
+    "@types/react": "^17.0.0"
+  }
+}

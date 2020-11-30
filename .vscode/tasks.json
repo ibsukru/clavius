@@ -1,0 +1,170 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // https://code.visualstudio.com/docs/editor/tasks#vscode
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "test:update",
+      "group": "test",
+      "type": "shell",
+      "command": "yarn test:update",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "test",
+      "group": "test",
+      "type": "shell",
+      "command": "yarn test",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "lint",
+      "type": "shell",
+      "command": "yarn lint:fix",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "compile",
+      "type": "shell",
+      "command": "yarn lint:fix && yarn compile",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "start:api",
+      "type": "shell",
+      "command": "APP_ENV=api yarn start",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "build:api:start:dev",
+      "type": "shell",
+      "command": "yarn build && yarn dev:api",
+      "presentation": {
+        "reveal": "silent",
+        "clear": true
+      }
+    },
+    {
+      "label": "start:web",
+      "type": "shell",
+      "command": "yarn start",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "build:web:start",
+      "type": "shell",
+      "command": "yarn build && yarn start",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "build:web:start:dev",
+      "type": "shell",
+      "command": "yarn build && yarn dev",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "dev:web",
+      "type": "shell",
+      "command": "yarn dev",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "spec",
+      "group": "test",
+      "type": "shell",
+      "command": "yarn build:dev && yarn spec",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "test:spec",
+      "group": "test",
+      "type": "shell",
+      "command": "yarn test && yarn spec",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "yarn build",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "build:dev",
+      "type": "shell",
+      "command": "yarn build:dev",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "add:git:push",
+      "type": "shell",
+      "command": "git add . && git commit -m '🚀' && git push",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "stryker",
+      "type": "shell",
+      "command": "yarn stryker"
+    },
+    {
+      "label": "mutate",
+      "type": "shell",
+      "command": "yarn build:dev && yarn mutate",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "clean",
+      "type": "shell",
+      "command": "yarn clean",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "install:clean",
+      "type": "shell",
+      "command": "yarn install:clean",
+      "presentation": {
+        "clear": true
+      }
+    },
+    {
+      "label": "(▀̿Ĺ̯▀̿ ̿)",
+      "type": "shell",
+      "command": "yarn deploy:review",
+      "presentation": {
+        "clear": true
+      }
+    }
+  ]
+}

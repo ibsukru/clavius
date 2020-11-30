@@ -1,0 +1,11 @@
+{
+  "name": "clavius.lib",
+  "version": "1.0.0",
+  "main": "dist",
+  "types": "index",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "yarn run babel src -d --out-dir dist --extensions '.ts'",
+    "test": "jest"
+  }
+}
