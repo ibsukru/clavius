@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DealWithIt 1`] = `
+<span>
+  Hello world (▀̿Ĺ̯▀̿ ̿).
+</span>
+`;

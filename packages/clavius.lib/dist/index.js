@@ -1,15 +1,15 @@
-'use strict'
+"use strict";
 
-var _interopRequireDefault = require('/Users/iliyan/Documents/work/clavius/node_modules/@babel/runtime/helpers/interopRequireDefault')
+var _interopRequireDefault = require("/Users/iliyan/Documents/work/clavius/node_modules/@babel/runtime/helpers/interopRequireDefault");
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
-})
-Object.defineProperty(exports, 'dealWithIt', {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "dealWithIt", {
   enumerable: true,
   get: function get() {
-    return _dealWithIt['default']
-  },
-})
+    return _dealWithIt["default"];
+  }
+});
 
-var _dealWithIt = _interopRequireDefault(require('./dealWithIt'))
+var _dealWithIt = _interopRequireDefault(require("./dealWithIt"));
