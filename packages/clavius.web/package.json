@@ -11,12 +11,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "classnames": "^2.2.6",
-    "js-cookie": "^2.2.1",
     "clavius.lib": "1.0.0",
+    "js-cookie": "^2.2.1",
     "next": "^10.0.3",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "storyblok-js-client": "^3.2.0",
+    "storyblok-react": "^0.1.1"
   },
   "devDependencies": {
     "@types/js-cookie": "^2.2.6",

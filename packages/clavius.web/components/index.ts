@@ -5,5 +5,19 @@ import Layout from './layout'
 import Navigation from './navigation'
 import Headline from './headline'
 import Rails from './rails'
+import Placeholder from './placeholder'
+import DynamicComponent from './dynamicComponent/dynamicComponent'
+import Page from './page'
 
-export { Rails, Headline, Button, DealWithIt, Spinner, Layout, Navigation }
+export {
+  Rails,
+  DynamicComponent,
+  Headline,
+  Button,
+  DealWithIt,
+  Spinner,
+  Layout,
+  Navigation,
+  Placeholder,
+  Page,
+}
