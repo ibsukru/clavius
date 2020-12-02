@@ -8,6 +8,8 @@ import Rails from './rails'
 import Placeholder from './placeholder'
 import DynamicComponent from './dynamicComponent/dynamicComponent'
 import Page from './page'
+import WhatIsOn from './whatIsOn'
+import GetStarted from './getStarted'
 
 export {
   Rails,
@@ -20,4 +22,6 @@ export {
   Navigation,
   Placeholder,
   Page,
+  WhatIsOn,
+  GetStarted,
 }
