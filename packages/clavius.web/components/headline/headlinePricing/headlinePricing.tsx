@@ -1,42 +1,44 @@
 import Markdown from 'react-markdown'
+import { useFeatureToggleContext } from '../../../hooks'
 
 const HeadlinePricing = props => {
   const { header, footer, features, signup } = props.pricing
 
+  const {
+    featureToggles: { SIGNUP_PRICING_CTA_COLOR },
+  } = useFeatureToggleContext()
+
   return (
-    <section>
+    <section className="pricing">
       <style jsx>{`
-        section {
+        .pricing {
           background-color: var(--shade-2);
           display: inline-block;
           padding: 20px;
           border-radius: var(--radius);
         }
-        header {
+
+        .pricing-header {
           font-size: 1.475rem;
           font-weight: bold;
           line-height: 1rem;
         }
 
-        .features {
+        .pricing-features {
           margin: 20px 0;
           font-size: 0.875rem;
         }
 
-        footer {
-          font-size: 0.875rem;
-        }
-
-        .features > :global(ul) {
+        .pricing-features > :global(ul) {
           margin: 0;
           padding: 0;
           list-style-position: inside;
         }
 
-        .signup {
+        .pricing-signup {
           display: block;
           color: var(--foreground);
-          background-color: var(--accent-5);
+          background-color: var(${SIGNUP_PRICING_CTA_COLOR || '--accent-5'});
           padding: 10px;
           font-weight: bold;
           font-size: 0.875rem;
@@ -45,18 +47,23 @@ const HeadlinePricing = props => {
           margin: 0 0 20px 0;
           border-radius: var(--radius);
         }
-        .signup:hover {
+
+        .pricing-signup:hover {
           background-color: var(--accent-6);
         }
+
+        .pricing-footer {
+          font-size: 0.875rem;
+        }
       `}</style>
-      <header>{header}</header>
-      <div className="features">
+      <header className="pricing-header">{header}</header>
+      <div className="pricing-features">
         <Markdown source={features} />
       </div>
-      <a href="/signup" className="signup">
+      <a href="/signup" className="pricing-signup">
         {signup}
       </a>
-      <footer>{footer}</footer>
+      <footer className="pricing-footer">{footer}</footer>
     </section>
   )
 }

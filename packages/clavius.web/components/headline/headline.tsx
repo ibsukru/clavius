@@ -9,12 +9,13 @@ const Headline = props => {
 
   return (
     <SbEditable content={blok}>
-      <div className="hero">
+      <div className="headline">
         <style jsx>{`
-          .hero {
+          .headline {
             position: relative;
           }
-          .hero::before {
+
+          .headline:before {
             content: '';
             position: absolute;
             top: 0;
@@ -24,34 +25,36 @@ const Headline = props => {
             background: url(${bg.filename});
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: center center;
-            filter: brightness(60%);
-          }
-          .hero-content {
-            position: relative;
+            background-position: top left;
+            filter: brightness(50%);
           }
 
-          .header {
+          .headline-content {
+            position: relative;
+            padding-bottom: 200px;
+          }
+
+          .headline-aside-title {
+            font-size: 2.3rem;
+            max-width: 600px;
+          }
+
+          .headline-aside {
+            margin: 50px 30px 0 30px;
+          }
+
+          .headline-aside-pricing {
+            margin-top: 30px;
+          }
+
+          .headline-nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 20px;
           }
-          a {
-            display: inline-block;
-          }
 
-          h1 {
-            font-size: 2.3rem;
-            max-width: 600px;
-          }
-          section {
-            margin: 50px 30px 0 30px;
-          }
-          .pricing {
-            margin-top: 30px;
-          }
-          .explore {
+          .headline-nav-explore {
             display: inline-flex;
             color: var(--background);
             background-color: var(--shade-8);
@@ -60,25 +63,26 @@ const Headline = props => {
             font-weight: bold;
             font-size: 0.875rem;
           }
-          .explore:hover {
+
+          .headline-nav-explore:hover {
             background-color: var(--shade-7);
           }
         `}</style>
-        <div className="hero-content">
-          <div className="header">
+        <div className="headline-content">
+          <nav className="headline-nav">
             <a href="/">
               <img src={logo.filename} width="42px" alt="logo" />
             </a>
-            <a className="explore" href="/">
+            <a className="headline-nav-explore" href="/">
               {explore}
             </a>
-          </div>
-          <section>
-            <h1>{text}</h1>
-            <div className="pricing">
+          </nav>
+          <aside className="headline-aside">
+            <h1 className="headline-aside-title">{text}</h1>
+            <div className="headline-aside-pricing">
               <HeadlinePricing pricing={pricing} />
             </div>
-          </section>
+          </aside>
         </div>
       </div>
     </SbEditable>

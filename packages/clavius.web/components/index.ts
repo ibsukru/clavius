@@ -10,6 +10,9 @@ import DynamicComponent from './dynamicComponent/dynamicComponent'
 import Page from './page'
 import WhatIsOn from './whatIsOn'
 import GetStarted from './getStarted'
+import HowToWatch from './howToWatch'
+import FAQ from './faq'
+import Footer from './footer'
 
 export {
   Rails,
@@ -24,4 +27,7 @@ export {
   Page,
   WhatIsOn,
   GetStarted,
+  HowToWatch,
+  FAQ,
+  Footer,
 }

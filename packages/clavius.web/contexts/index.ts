@@ -1,3 +1,13 @@
-import { ThemeContext } from './themeContext'
+import { ThemeContext, ThemeContextProvider } from './themeContext'
 
-export { ThemeContext }
+import {
+  FeatureToggleContextProvider,
+  FeatureToggleContext,
+} from './featureToggleContext'
+
+export {
+  FeatureToggleContext,
+  ThemeContextProvider,
+  FeatureToggleContextProvider,
+  ThemeContext,
+}

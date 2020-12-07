@@ -10,12 +10,12 @@ const WhatIsOnEvent = props => {
   return (
     <SbEditable content={blok}>
       <style jsx>{`
-        img {
+        .whatIsOnEvent-img {
           display: block;
         }
       `}</style>
       <figure>
-        <img src={filename} alt={alt} />
+        <img className="whatIsOnEvent-img" src={filename} alt={alt} />
       </figure>
     </SbEditable>
   )

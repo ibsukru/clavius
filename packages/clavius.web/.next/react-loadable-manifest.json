@@ -1,4 +1,14 @@
 {
+  "../whatIsOn/whatIsOnEvent": [
+    {
+      "id": "./components/whatIsOn/whatIsOnEvent/index.ts",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./components/whatIsOn/whatIsOnEvent/whatIsOnEvent.tsx",
+      "file": "static/chunks/1.js"
+    }
+  ],
   "./dev/noop": [
     {
       "id": "../../node_modules/next/dist/client/dev/noop.js",

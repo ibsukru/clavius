@@ -3,8 +3,8 @@ import App from 'next/app'
 import Cookies from 'js-cookie'
 
 import { resetStyles, htmlStyles, nprogressStyles } from '../styles'
-import { ThemeContextProvider, themeType } from '../contexts/themeContext'
-
+import { themeType } from '../contexts/themeContext'
+import { ThemeContextProvider } from '../contexts'
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props

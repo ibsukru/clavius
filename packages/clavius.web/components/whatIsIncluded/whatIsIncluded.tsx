@@ -7,32 +7,23 @@ const WhatIsIncluded = props => {
 
   return (
     <SbEditable content={blok}>
-      <section>
+      <section className="whatIsIncluded">
         <style jsx>{`
-          ul {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            text-align: center;
-          }
-          li {
-            flex: 0 0 32.33%;
-          }
-          section {
+          .whatIsIncluded {
             padding: 30px 0;
             margin: 0 auto;
             color: var(--background);
             background-color: var(--shade-7);
           }
 
-          header {
+          .whatIsIncluded-header {
             text-align: center;
             font-size: 2rem;
             font-weight: bold;
             margin: 20px 0 30px 0;
           }
 
-          .features {
+          .whatIsIncluded-features {
             width: 400px;
             background-color: var(--foreground);
             margin: 0 auto;
@@ -40,23 +31,24 @@ const WhatIsIncluded = props => {
             border-radius: var(--radius);
           }
 
-          .features :global(ul) {
+          .whatIsIncluded-features :global(ul) {
             margin: 0;
             font-size: 0.875rem;
             padding: 0;
             padding-left: 40px;
           }
 
-          .features :global(ul > li) {
+          .whatIsIncluded-features :global(ul > li) {
             margin: 0 0 20px 0;
           }
-          .subtitle {
+
+          .whatIsIncluded-features-subtitle {
             text-align: center;
             margin-bottom: 10px;
             padding: 15px 0;
           }
 
-          .signup {
+          .whatIsIncluded-features-signup {
             display: block;
             color: var(--foreground);
             background-color: var(--background);
@@ -67,19 +59,19 @@ const WhatIsIncluded = props => {
             margin: 0 0 20px 0;
             border-radius: var(--radius);
           }
-          .signup:hover {
+
+          .whatIsIncluded-features-signup:hover {
             background-color: var(--accent-6);
           }
         `}</style>
-
-        <header>{title}</header>
-        <div className="features">
-          <div className="subtitle">
+        <header className="whatIsIncluded-header">{title}</header>
+        <div className="whatIsIncluded-features">
+          <div className="whatIsIncluded-features-subtitle">
             <Markdown source={subtitle} />
           </div>
           <Markdown source={features} />
 
-          <a href="/" className="signup">
+          <a href="/" className="whatIsIncluded-features-signup">
             {signup}
           </a>
         </div>

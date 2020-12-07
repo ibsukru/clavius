@@ -7,32 +7,35 @@ const WhatIsOn = props => {
 
   return (
     <SbEditable content={blok}>
-      <section>
+      <section className="whatIsOn">
         <style jsx>{`
-          ul {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-          }
-          li {
-            flex: 0 0 32.33%;
-          }
-          section {
+          .whatIsOn {
             margin: 30px auto;
             max-width: 80%;
           }
-          header {
+
+          .whatIsOn-header {
             text-align: center;
             font-size: 2rem;
             font-weight: bold;
             margin: 20px 0 30px 0;
           }
+
+          .whatIsOn-events {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+          }
+
+          .whatIsOn-event {
+            flex: 0 0 32.33%;
+          }
         `}</style>
 
-        <header>{title}</header>
-        <ul>
+        <header className="whatIsOn-header">{title}</header>
+        <ul className="whatIsOn-events">
           {blok.events?.map(nestedBlok => (
-            <li key={nestedBlok._uid}>
+            <li className="whatIsOn-event" key={nestedBlok._uid}>
               <DynamicComponent blok={nestedBlok} />
             </li>
           ))}

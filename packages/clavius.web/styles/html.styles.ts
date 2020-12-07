@@ -59,7 +59,7 @@ export default css.global`
     --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
       'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
       'Helvetica Neue', sans-serif;
-    --font-mono: 'Roboto Mono', Menlo, Monaco, Lucida Console, Liberation Mono,
+    --font-mono: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
 
@@ -86,7 +86,8 @@ export default css.global`
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  header {
   }
 
   a {

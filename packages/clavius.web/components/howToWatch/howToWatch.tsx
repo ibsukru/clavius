@@ -2,31 +2,34 @@ import React from 'react'
 import SbEditable, { SbEditableContent } from 'storyblok-react'
 import Markdown from 'react-markdown'
 
-const GetStarted: React.FunctionComponent<{
+const HowToWatch: React.FunctionComponent<{
   blok: SbEditableContent & {
     title: string
-    steps: {
+    platforms: {
       tbody: { body: { value: string; _uid: string }[] }[]
       thead: { value: string }[]
     }
   }
 }> = props => {
   const { blok } = props
-  const { steps, title } = blok
-  const { tbody, thead } = steps
+  const { platforms, title } = blok
+  const { tbody } = platforms
 
-  const list = thead.map((item, index) => {
-    const body = tbody[0].body[index]
-    return {
-      title: item.value,
-      description: body.value,
-      key: body._uid,
-    }
-  })
+  const list = tbody.reduce<{ type: string; title: string; devices: string }[]>(
+    (acc, item) => {
+      const [type, title, devices] = item.body
+      return acc.concat({
+        type: type.value,
+        title: title.value,
+        devices: devices.value,
+      })
+    },
+    [],
+  )
 
   return (
     <SbEditable content={blok}>
-      <section className="getStarted">
+      <section className="howToWatch">
         <style jsx>{`
           .header {
             text-align: center;
@@ -35,7 +38,7 @@ const GetStarted: React.FunctionComponent<{
             margin: 0 0 30px 0;
           }
 
-          .getStarted {
+          .howToWatch {
             padding: 30px 0;
             margin: 0 auto;
             color: var(--background);
@@ -77,18 +80,18 @@ const GetStarted: React.FunctionComponent<{
           }
         `}</style>
 
-        <div className="wrapper">
+        <div className="howToWatch-wrapper">
           <header className="header">{title}</header>
           <div className="steps">
             {list.map((item, index) => {
               return (
-                <div className="step" key={item.key}>
+                <div className="step" key={item.type}>
                   <header className="stepHeader">
                     <span className="number">{index + 1}.</span>
                     {item.title}
                   </header>
                   <div className="description">
-                    <Markdown source={item.description} />
+                    <Markdown source={item.devices} />
                   </div>
                 </div>
               )
@@ -100,4 +103,4 @@ const GetStarted: React.FunctionComponent<{
   )
 }
 
-export default GetStarted
+export default HowToWatch
