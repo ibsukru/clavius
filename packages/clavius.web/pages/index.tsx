@@ -1,5 +1,4 @@
 import React from 'react'
-import { StoryblokResult } from 'storyblok-js-client'
 import { Layout, Page } from '../components'
 import { StoryBlokContextProvider } from '../contexts'
 import { storyBlokType } from '../contexts/storyBlokContext'
