@@ -1,9 +1,9 @@
-import { storyBlokService } from '../../lib'
+import { storyBlockEditor } from '../../lib'
 
 const Layout: React.FunctionComponent<{}> = ({ children }) => {
   return (
     <>
-      {children} {storyBlokService.bridge()}
+      {children} {storyBlockEditor().bridge()}
     </>
   )
 }

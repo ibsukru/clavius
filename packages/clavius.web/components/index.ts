@@ -1,5 +1,3 @@
-import DealWithIt from './dealWithIt'
-import Button from './button'
 import Spinner from './spinner'
 import Layout from './layout'
 import Navigation from './navigation'
@@ -18,8 +16,6 @@ export {
   Rails,
   DynamicComponent,
   Headline,
-  Button,
-  DealWithIt,
   Spinner,
   Layout,
   Navigation,

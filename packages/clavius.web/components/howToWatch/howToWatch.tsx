@@ -6,8 +6,7 @@ const HowToWatch: React.FunctionComponent<{
   blok: SbEditableContent & {
     title: string
     platforms: {
-      tbody: { body: { value: string; _uid: string }[] }[]
-      thead: { value: string }[]
+      tbody?: { body: Array<{ value: string; _uid: string }> }[]
     }
   }
 }> = props => {
@@ -15,17 +14,21 @@ const HowToWatch: React.FunctionComponent<{
   const { platforms, title } = blok
   const { tbody } = platforms
 
-  const list = tbody.reduce<{ type: string; title: string; devices: string }[]>(
-    (acc, item) => {
-      const [type, title, devices] = item.body
-      return acc.concat({
-        type: type.value,
-        title: title.value,
-        devices: devices.value,
-      })
-    },
-    [],
-  )
+  const list = tbody?.reduce<
+    { type: string; title: string; devices: string }[]
+  >((acc, item) => {
+    if (!item || item.body) return acc
+
+    const { body } = item
+
+    if (!Array.isArray(body)) return acc
+
+    return (acc || []).concat({
+      type: body[0]?.value,
+      title: body[1]?.value,
+      devices: body[2]?.value,
+    })
+  }, undefined)
 
   return (
     <SbEditable content={blok}>
@@ -90,7 +93,7 @@ const HowToWatch: React.FunctionComponent<{
         <div className="howToWatch-wrapper">
           <header className="howToWatch-header">{title}</header>
           <div className="howToWatch-steps">
-            {list.map((item, index) => {
+            {list?.map((item, index) => {
               return (
                 <div className="howToWatch-step" key={item.type}>
                   <header className="howToWatch-stepHeader">

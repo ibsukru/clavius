@@ -3,7 +3,7 @@ import { StoryblokResult } from 'storyblok-js-client'
 import { Layout, Page } from '../components'
 import { StoryBlokContextProvider } from '../contexts'
 import { storyBlokType } from '../contexts/storyBlokContext'
-import { storyBlokService } from '../lib'
+import { storyBlockEditor, storyBlokService } from '../lib'
 
 export default class extends React.Component<
   { storyBlok: storyBlokType },
@@ -17,12 +17,10 @@ export default class extends React.Component<
   }
 
   static async getInitialProps({ query }) {
-    storyBlokService.setQuery(query)
-
     let storyBlok: StoryblokResult | undefined
 
     try {
-      storyBlok = await storyBlokService.get(
+      storyBlok = await storyBlokService().get(
         `cdn/stories/${query.slug || 'home'}`,
         {},
       )
@@ -39,7 +37,7 @@ export default class extends React.Component<
   }
 
   componentDidMount() {
-    storyBlokService.initEditor(this)
+    storyBlockEditor().init()
   }
 
   render() {
