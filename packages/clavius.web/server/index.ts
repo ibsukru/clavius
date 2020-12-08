@@ -20,7 +20,9 @@ import next from 'next'
   ])
 
   server.get('/:slug', async (request, response) => {
-    return app.render(request, response, '/index')
+    return app.render(request, response, '/index', {
+      slug: request.params.slug as string,
+    })
   })
 
   server.get('*', async (request, response) => {

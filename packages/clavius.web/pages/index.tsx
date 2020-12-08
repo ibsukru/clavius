@@ -7,7 +7,7 @@ import { storyBlokService } from '../lib'
 
 export default class extends React.Component<
   { storyBlok: storyBlokType },
-  { story: any }
+  { story: unknown }
 > {
   constructor(props) {
     super(props)
