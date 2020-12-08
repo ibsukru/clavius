@@ -7,12 +7,14 @@ import { storyBlockEditor, storyBlokService } from '../lib'
 
 export default class extends React.Component<
   { storyBlok: storyBlokType },
-  { story: unknown }
+  { storyBlok: storyBlokType }
 > {
   constructor(props) {
     super(props)
+
+    //💡 State is not ideal but for live editing purposes on dev mode, see storyblok editor to bridge
     this.state = {
-      story: props.storyBlok?.data?.story,
+      storyBlok: props.storyBlok,
     }
   }
 
@@ -42,7 +44,7 @@ export default class extends React.Component<
 
   render() {
     return (
-      <StoryBlokContextProvider storyBlok={this.props.storyBlok}>
+      <StoryBlokContextProvider storyBlok={this.state.storyBlok}>
         <Layout>
           <Page />
         </Layout>
