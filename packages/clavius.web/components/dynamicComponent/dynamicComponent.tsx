@@ -3,15 +3,13 @@ import Navigation from '../navigation'
 import Rails from '../rails'
 import WhatIsOn from '../whatIsOn'
 import Placeholder from '../placeholder'
-// import WhatIsOnEvent from '../whatIsOn/whatIsOnEvent'
+import WhatIsOnEvent from '../whatIsOn/whatIsOnEvent'
 import WhatIsIncluded from '../whatIsIncluded'
 import GetStarted from '../getStarted'
 import HowToWatch from '../howToWatch'
 import FAQ from '../faq'
 import Footer from '../footer'
 import React from 'react'
-import dynamic from 'next/dynamic'
-const WhatIsOnEvent = dynamic(() => import('../whatIsOn/whatIsOnEvent'))
 
 const Components = {
   navigation: Navigation,
