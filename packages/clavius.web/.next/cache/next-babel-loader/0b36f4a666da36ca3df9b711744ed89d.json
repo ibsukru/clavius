@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nimport { DealWithIt } from '../components';\n\nconst Index = () => {\n  return /*#__PURE__*/_jsx(DealWithIt, {\n    text: \"\\uD83D\\uDDBC\\uFE0F Hello world\"\n  });\n};\n\nexport default Index;","map":null,"metadata":{},"sourceType":"module"}

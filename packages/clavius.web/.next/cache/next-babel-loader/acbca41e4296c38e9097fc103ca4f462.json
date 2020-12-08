@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { ThemeContextProvider, ThemeContext } from './themeContext';\nexport const otherTheme = theme => theme === 'dark' ? 'light' : 'dark';\nexport { ThemeContextProvider, ThemeContext };","map":null,"metadata":{},"sourceType":"module"}

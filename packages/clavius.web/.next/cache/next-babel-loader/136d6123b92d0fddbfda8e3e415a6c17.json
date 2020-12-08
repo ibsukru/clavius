@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nimport React from 'react';\nimport { dealWithIt } from 'clavius.lib';\n\nconst DealWithIt = ({\n  text\n}) => /*#__PURE__*/_jsx(\"span\", {\n  children: dealWithIt(text)\n});\n\nexport default DealWithIt;","map":null,"metadata":{},"sourceType":"module"}

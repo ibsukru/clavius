@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { useContext } from 'react';\nimport { ThemeContext } from '../../contexts';\n\nconst useThemeContext = () => {\n  return useContext(ThemeContext);\n};\n\nexport default useThemeContext;","map":null,"metadata":{},"sourceType":"module"}
