@@ -21,27 +21,28 @@ const FAQ: React.FunctionComponent<{
   return (
     <Fragment>
       <style jsx>{`
-        dd {
+        .faq {
+          max-width: 60%;
+          margin: 20px auto;
+        }
+
+        .faq-title {
+          cursor: pointer;
+          font-weight: bold;
+          margin: 5px 0;
+        }
+
+        .faq-description {
           margin: 0 0 20px 0;
           font-size: 0.875rem;
           display: none;
         }
 
-        dd.active {
+        .faq-description.active {
           display: block;
         }
-
-        dt {
-          cursor: pointer;
-          font-weight: bold;
-          margin: 5px 0;
-        }
-        dl {
-          max-width: 60%;
-          margin: 20px auto;
-        }
       `}</style>
-      <dl>
+      <dl className="faq">
         {accordion.panels.map((panel, i) => {
           return (
             <Fragment key={panel._uid}>
@@ -49,10 +50,13 @@ const FAQ: React.FunctionComponent<{
                 onClick={() => {
                   setIndex(i === index ? undefined : i)
                 }}
+                className="faq-title"
               >
                 {panel.title}
               </dt>
-              <dd className={index === i ? 'active' : ''}>{panel.content}</dd>
+              <dd className={`faq-description ${index === i ? 'active' : ''}`}>
+                {panel.content}
+              </dd>
             </Fragment>
           )
         })}

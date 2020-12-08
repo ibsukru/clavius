@@ -1,14 +1,11 @@
 import React, { Fragment } from 'react'
 import App from 'next/app'
-import Cookies from 'js-cookie'
 
 import { resetStyles, htmlStyles, nprogressStyles } from '../styles'
-import { themeType } from '../contexts/themeContext'
-import { ThemeContextProvider } from '../contexts'
-class MyApp extends App {
+import { storyBlokType } from '../contexts/storyBlokContext'
+class MyApp extends App<{ storyBlock: storyBlokType }> {
   render() {
     const { Component, pageProps } = this.props
-    const theme = (Cookies.get('theme') || 'dark') as themeType
 
     return (
       <Fragment>
@@ -21,9 +18,7 @@ class MyApp extends App {
         <style jsx global>
           {nprogressStyles}
         </style>
-        <ThemeContextProvider theme={theme}>
-          <Component {...pageProps} />
-        </ThemeContextProvider>
+        <Component {...pageProps} />
       </Fragment>
     )
   }

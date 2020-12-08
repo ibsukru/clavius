@@ -31,7 +31,18 @@ const Headline = props => {
 
           .headline-content {
             position: relative;
-            padding-bottom: 200px;
+            padding-bottom: 30px;
+          }
+
+          @media (min-width: 760px) {
+            .headline-content {
+            }
+          }
+
+          @media (min-width: 1600px) {
+            .headline-content {
+              padding-bottom: 180px;
+            }
           }
 
           .headline-aside-title {

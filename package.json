@@ -68,5 +68,8 @@
       "yarn lint:fix",
       "git add"
     ]
+  },
+  "dependencies": {
+    "nodemon": "^2.0.6"
   }
 }

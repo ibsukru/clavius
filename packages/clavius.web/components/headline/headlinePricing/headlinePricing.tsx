@@ -2,11 +2,14 @@ import Markdown from 'react-markdown'
 import { useFeatureToggleContext } from '../../../hooks'
 
 const HeadlinePricing = props => {
-  const { header, footer, features, signup } = props.pricing
+  const { pricing } = props
 
-  const {
-    featureToggles: { SIGNUP_PRICING_CTA_COLOR },
-  } = useFeatureToggleContext()
+  if (!pricing) return null
+
+  const { header, footer, features, signup } = pricing
+
+  const { featureToggles } = useFeatureToggleContext()
+  const { SIGNUP_PRICING_CTA_COLOR } = featureToggles || {}
 
   return (
     <section className="pricing">

@@ -28,7 +28,19 @@ const WhatIsOn = props => {
           }
 
           .whatIsOn-event {
-            flex: 0 0 32.33%;
+            flex: 100%;
+          }
+
+          @media (min-width: 760px) {
+            .whatIsOn-event {
+              flex: 50%;
+            }
+          }
+
+          @media (min-width: 1200px) {
+            .whatIsOn-event {
+              flex: 32.33%;
+            }
           }
         `}</style>
 
