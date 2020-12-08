@@ -15,18 +15,20 @@ const HowToWatch: React.FunctionComponent<{
   const { tbody } = platforms
 
   const list = tbody?.reduce<
-    { type: string; title: string; devices: string }[]
+    { type: string; title: string; devices: string }[] | undefined
   >((acc, item) => {
     if (!item || item.body) return acc
 
-    const { body } = item
+    const { body } = item || { body: [undefined, undefined, undefined] }
 
-    if (!Array.isArray(body)) return acc
+    const [{ value: type }, { value: title }, { value: devices }] = body
+
+    if (!type || !body || !devices) return acc
 
     return (acc || []).concat({
-      type: body[0]?.value,
-      title: body[1]?.value,
-      devices: body[2]?.value,
+      type,
+      title,
+      devices,
     })
   }, undefined)
 
