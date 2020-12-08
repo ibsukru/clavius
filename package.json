@@ -70,7 +70,9 @@
     ]
   },
   "dependencies": {
+    "@types/lodash.defaultsdeep": "^4.6.6",
     "dotenv": "^8.2.0",
+    "lodash.defaultsdeep": "^4.6.1",
     "nodemon": "^2.0.6"
   }
 }

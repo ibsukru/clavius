@@ -1,3 +1,5 @@
+import defaultsDeep from 'lodash.defaultsdeep'
+
 const storyBlockEditor = () => {
   return {
     init: reactComponent => {
@@ -11,25 +13,24 @@ const storyBlockEditor = () => {
 
         // Update state.story on input in Visual Editor
         // this will alter the state and replaces the current story with a current raw story object and resolve relations
-        window.storyblok.on('input', event => {
-          if (
-            event.story.content._uid === reactComponent.state.story.content._uid
-          ) {
-            event.story.content = window.storyblok.addComments(
-              event.story.content,
-              event.story.id,
-            )
-            window.storyblok.resolveRelations(
-              event.story,
-              ['featured-articles.articles'],
-              () => {
-                reactComponent.setState({
-                  story: event.story,
-                })
-              },
-            )
-          }
-        })
+        // window.storyblok.on('input', event => {
+        //   if (
+        //     event.story.content._uid === reactComponent.state.story.content._uid
+        //   ) {
+        //     event.story.content = window.storyblok.addComments(
+        //       event.story?.content,
+        //       event.story?.id,
+        //     )
+
+        //     window.storyblok.resolveRelations(
+        //       event.story,
+        //       ['featured-articles.articles'],
+        //       () => {
+        //         reactComponent.setState(defaultsDeep(reactComponent.state, {}))
+        //       },
+        //     )
+        //   }
+        // })
       }
     },
     bridge() {

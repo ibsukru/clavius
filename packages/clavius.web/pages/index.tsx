@@ -33,7 +33,7 @@ export default class extends React.Component<
   }
 
   componentDidMount() {
-    storyBlockEditor().init()
+    storyBlockEditor().init(this)
   }
 
   render() {
