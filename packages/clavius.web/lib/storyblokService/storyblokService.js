@@ -1,8 +1,8 @@
 import StoryblokClient from 'storyblok-js-client'
+import { token } from '.'
 
 const storyblokService = () => {
   const devMode = true
-  const token = 'vmYW2YhFe70g4j3htm42swtt' // testing preview... load this from env
   const query = {}
 
   const client = new StoryblokClient({
