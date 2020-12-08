@@ -19,23 +19,18 @@ export default class extends React.Component<
   }
 
   static async getInitialProps({ query }) {
-    let storyBlok: StoryblokResult | undefined
-
     try {
-      storyBlok = await storyBlokService().get(
-        `cdn/stories/${query.slug || 'home'}`,
-        {},
-      )
+      return {
+        storyBlok: await storyBlokService().get(
+          `cdn/stories/${query.slug || 'home'}`,
+          {},
+        ),
+      }
     } catch (error) {
-      console.log(
-        `🚀 ~ file: index.tsx ~ line 18 ~ extends ~ getInitialProps ~ error`,
-        error,
-      )
+      console.log(`ERROR`, error)
     }
 
-    return {
-      storyBlok,
-    }
+    return {}
   }
 
   componentDidMount() {
