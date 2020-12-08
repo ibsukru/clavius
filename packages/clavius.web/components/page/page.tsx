@@ -7,7 +7,7 @@ import { useStoryBlokContext } from '../../hooks'
 const Page = () => {
   const { storyBlok } = useStoryBlokContext()
 
-  const { story } = storyBlok.data || {}
+  const { story } = storyBlok?.data || {}
 
   if (!story) {
     return (
