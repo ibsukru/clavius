@@ -1,8 +1,12 @@
-import defaultsDeep from 'lodash.defaultsdeep'
+// import defaultsDeep from 'lodash.defaultsdeep'
 
 const storyBlockEditor = () => {
   return {
     init: reactComponent => {
+      console.log(
+        `🚀 ~ file: storyblokEditor.js ~ line 6 ~ storyBlockEditor ~ reactComponent`,
+        reactComponent,
+      )
       if (window.storyblok) {
         window.storyblok.init()
 
@@ -10,6 +14,8 @@ const storyBlockEditor = () => {
         window.storyblok.on(['change', 'published'], () =>
           location.reload(true),
         )
+
+        // I will do it in a hook
 
         // Update state.story on input in Visual Editor
         // this will alter the state and replaces the current story with a current raw story object and resolve relations
