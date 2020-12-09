@@ -8,7 +8,10 @@ import HowToWatch from './howToWatch'
 import FAQ from './faq'
 import Footer from './footer'
 
-import { DynamicComponent, Spinner, Layout, Placeholder } from './common'
+import { Spinner } from './common'
+import DynamicComponent from './dynamicComponent'
+import Layout from './layout'
+import Placeholder from './placeholder'
 
 export {
   Rails,
