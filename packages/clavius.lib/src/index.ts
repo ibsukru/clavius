@@ -1,3 +1,3 @@
-const dealWithIt = 'dealWithIt'
+import storyBlokService from './storyblokService'
 
-export { dealWithIt }
+export { storyBlokService }
