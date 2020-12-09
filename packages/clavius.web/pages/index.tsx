@@ -1,14 +1,17 @@
 import React, { Fragment } from 'react'
-import { Layout, Page } from '../components'
+import { Page } from '../components'
 import { StoryBlokContextProvider } from '../contexts'
 import { storyBlokType } from '../contexts/storyBlokContext'
 import { token } from 'clavius.lib/src/storyblokService'
 import { NextPage } from 'next'
 import { storyBlokService } from 'clavius.lib/src'
+import { useScript } from '../hooks'
 
 const Index: NextPage<{
   storyBlok: storyBlokType | null
 }> = props => {
+  useScript('//app.storyblok.com/f/storyblok-latest.js?t=' + token)
+
   const { storyBlok } = props
 
   if (!storyBlok)
@@ -18,12 +21,7 @@ const Index: NextPage<{
 
   return (
     <StoryBlokContextProvider storyBlok={storyBlok}>
-      <Layout>
-        <script
-          src={'//app.storyblok.com/f/storyblok-latest.js?t=' + token}
-        ></script>
-        <Page />
-      </Layout>
+      <Page />
     </StoryBlokContextProvider>
   )
 }

@@ -10,7 +10,6 @@ import Footer from './footer'
 
 import { Spinner } from './common'
 import DynamicComponent from './dynamicComponent'
-import Layout from './layout'
 import Placeholder from './placeholder'
 
 export {
@@ -18,7 +17,6 @@ export {
   DynamicComponent,
   Headline,
   Spinner,
-  Layout,
   Navigation,
   Placeholder,
   Page,
