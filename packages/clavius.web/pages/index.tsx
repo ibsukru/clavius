@@ -1,48 +1,43 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react'
 import { Layout, Page } from '../components'
 import { StoryBlokContextProvider } from '../contexts'
 import { storyBlokType } from '../contexts/storyBlokContext'
-import { storyBlockEditor, storyBlokService } from '../lib'
+import { storyBlokService } from '../lib'
 
-export default class extends React.Component<
-  { storyBlok: storyBlokType },
-  { storyBlok: storyBlokType }
-> {
-  constructor(props) {
-    super(props)
+import { NextPage } from 'next'
 
-    //💡 State is not ideal but for live editing purposes on dev mode, see storyblok editor to bridge
-    this.state = {
-      storyBlok: props.storyBlok,
-    }
-  }
+const Index: NextPage<{
+  storyBlok?: storyBlokType
+}> = props => {
+  const [state] = useState<storyBlokType | undefined>(props.storyBlok)
 
-  static async getInitialProps({ query }) {
-    try {
-      return {
-        storyBlok: await storyBlokService().get(
-          `cdn/stories/${query.slug || 'home'}`,
-          {},
-        ),
-      }
-    } catch (error) {
-      console.log(`ERROR`, error)
-    }
-
-    return {}
-  }
-
-  componentDidMount() {
-    storyBlockEditor().init(this)
-  }
-
-  render() {
+  if (!state)
     return (
-      <StoryBlokContextProvider storyBlok={this.state.storyBlok}>
-        <Layout>
-          <Page />
-        </Layout>
-      </StoryBlokContextProvider>
+      <Fragment>Something not correct, api response is not there.</Fragment>
     )
-  }
+
+  return (
+    <StoryBlokContextProvider storyBlok={state}>
+      <Layout>
+        <Page />
+      </Layout>
+    </StoryBlokContextProvider>
+  )
 }
+
+Index.getInitialProps = async ({ query }) => {
+  try {
+    return {
+      storyBlok: await storyBlokService().get(
+        `cdn/stories/${query.slug || 'home'}`,
+        {},
+      ),
+    }
+  } catch (error) {
+    console.log(`ERROR`, error)
+  }
+
+  return {}
+}
+
+export default Index
