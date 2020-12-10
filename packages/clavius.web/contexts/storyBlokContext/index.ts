@@ -1,4 +1,4 @@
-import { EditableContent } from '../../components'
+import { EditableContentTpe } from '../../components'
 import { StoryBlokContextProvider, StoryBlokContext } from './storyBlokContext'
 
 export type storyBlokContextType = {
@@ -16,7 +16,7 @@ export type StoryBlokResponseType = {
   total: number
   data?: {
     story: {
-      content: EditableContent & {
+      content: EditableContentTpe & {
         experiments: {
           tbody: { body: { value: string; _uid: string }[] }[]
           thead: { value: string }[]

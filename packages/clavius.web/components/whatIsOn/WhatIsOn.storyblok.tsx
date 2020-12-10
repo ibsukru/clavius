@@ -1,11 +1,11 @@
-import { EditableContent, WithStoryBlok, EditableComponent } from '..'
+import { EditableContentTpe, WithStoryBlok, EditableComponent } from '..'
 import WhatIsOn from './whatIsOn'
 
 const WhatIsOnStoryBlok: WithStoryBlok<
   typeof WhatIsOn,
   {
     title: string
-    events: EditableContent[]
+    events: EditableContentTpe[]
   }
 > = Component => props => {
   const { blok } = props

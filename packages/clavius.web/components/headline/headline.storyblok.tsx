@@ -1,30 +1,23 @@
-import {
-  assetType,
-  StoryBlokPropType,
-  WithStoryBlok,
-  EditableComponent,
-} from '..'
+import { AssetBlokType, WithStoryBlok, EditableComponent } from '..'
 
 import Headline from './headline'
 
-type HeadlineStoryBlokPropType = StoryBlokPropType<{
-  text: string
-  logo: assetType
-  explore: string
-  bg: assetType
-  pricing: [
-    {
-      header: string
-      footer: string
-      features: string
-      signup: string
-    },
-  ]
-}>
-
 const HeadlineStoryBlok: WithStoryBlok<
   typeof Headline,
-  HeadlineStoryBlokPropType
+  {
+    text: string
+    logo: AssetBlokType
+    explore: string
+    bg: AssetBlokType
+    pricing: [
+      {
+        header: string
+        footer: string
+        features: string
+        signup: string
+      },
+    ]
+  }
 > = Component => props => {
   const { blok } = props
 

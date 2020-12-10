@@ -1,8 +1,8 @@
-import { DynamicComponent, EditableContent } from '..'
+import { DynamicComponent, EditableContentTpe } from '..'
 
 const WhatIsOn: React.FunctionComponent<{
   title: string
-  events?: Array<EditableContent>
+  events?: Array<EditableContentTpe>
 }> = props => {
   const { title, events } = props
 

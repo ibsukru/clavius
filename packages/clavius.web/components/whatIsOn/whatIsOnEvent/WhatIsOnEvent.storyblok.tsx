@@ -1,11 +1,11 @@
-import { assetType, WithStoryBlok, EditableComponent } from '../..'
+import { AssetBlokType, WithStoryBlok, EditableComponent } from '../..'
 import WhatIsOnEvent from './whatIsOnEvent'
 
 const WhatIsOnEventStoryBlok: WithStoryBlok<
   typeof WhatIsOnEvent,
   {
     alt: string
-    img: assetType
+    img: AssetBlokType
   }
 > = Component => props => {
   const { blok } = props
