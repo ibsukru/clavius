@@ -4,7 +4,7 @@ import Headline from './headline'
 import { AssetBlokType, InjectStoryBlok } from '..'
 
 export type HeadlineStoryBlokType = InjectStoryBlok<
-  typeof Headline,
+  HeadlineType,
   {
     text: string
     logo: AssetBlokType
