@@ -15,7 +15,6 @@ export const StoryBlokContextProvider: React.FunctionComponent<{
 
   useEffect(() => {
     const sb = window['storyblok']
-
     if (!sb) {
       return
     }

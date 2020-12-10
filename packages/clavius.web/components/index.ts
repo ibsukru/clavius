@@ -11,6 +11,20 @@ import Footer from './footer'
 import { Spinner } from './common'
 import DynamicComponent from './dynamicComponent'
 import Placeholder from './placeholder'
+import SbEditable, { SbEditableContent } from 'storyblok-react'
+
+export type StoryPropType<T> = { blok: SbEditable & T }
+
+export type TableBlokType = {
+  tbody: Array<{ body: Array<SbEditableContent & { value: string }> }>
+}
+
+export type Editable = SbEditable
+export type EditableContent = SbEditableContent
+
+export type StoryBlokPropType<T> = EditableContent & T
+
+export type assetType = { filename: string }
 
 export {
   Rails,

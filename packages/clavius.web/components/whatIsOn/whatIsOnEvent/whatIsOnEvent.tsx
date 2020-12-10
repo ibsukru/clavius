@@ -1,23 +1,26 @@
+import { Fragment } from 'react'
 import SbEditable from 'storyblok-react'
 
-const WhatIsOnEvent = props => {
-  const { blok } = props
-  const {
-    alt,
-    img: { filename },
-  } = blok
+type WhatIsOnEventPropType = {
+  alt: string
+  src: string
+}
+
+const WhatIsOnEvent: React.FunctionComponent<WhatIsOnEventPropType> = props => {
+  const blok = props
+  const { alt, src } = blok
 
   return (
-    <SbEditable content={blok}>
+    <Fragment>
       <style jsx>{`
         .whatIsOnEvent-img {
           display: block;
         }
       `}</style>
       <figure>
-        <img className="whatIsOnEvent-img" src={filename} alt={alt} />
+        <img className="whatIsOnEvent-img" src={src} alt={alt} />
       </figure>
-    </SbEditable>
+    </Fragment>
   )
 }
 

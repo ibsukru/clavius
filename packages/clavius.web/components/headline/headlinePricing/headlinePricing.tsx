@@ -1,14 +1,11 @@
 import Markdown from 'react-markdown'
+import { HeadlinePricingPropType } from '.'
 import { useFeatureToggleContext } from '../../../hooks'
 
-const HeadlinePricing = props => {
-  const { pricing } = props
-
-  if (!pricing) return null
-
-  const { header, footer, features, signup } = pricing
-
+const HeadlinePricing: React.FunctionComponent<HeadlinePricingPropType> = props => {
   const { featureToggles } = useFeatureToggleContext()
+
+  const { header, footer, features, signup } = props
   const { SIGNUP_PRICING_CTA_COLOR } = featureToggles || {}
 
   return (

@@ -21,7 +21,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',
     'react/prop-types': 'off',
-    'no-unused-vars': 'warn',
+    '@typescript-eslint/no-unused-vars': 'off',
     // 'no-unused-vars': [2, { args: 'after-used', argsIgnorePattern: '^_' }],
   },
   settings: {

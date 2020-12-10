@@ -1,3 +1,3 @@
-import WhatIsOnEvent from './whatIsOnEvent'
+import WhatIsOnEventStoryBlok from './WhatIsOnEvent.storyblok'
 
-export default WhatIsOnEvent
+export default WhatIsOnEventStoryBlok

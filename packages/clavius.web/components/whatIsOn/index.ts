@@ -1,3 +1,3 @@
-import WhatIsOn from './whatIsOn'
+import WhatIsOnStoryBlok from './WhatIsOn.storyblok'
 
-export default WhatIsOn
+export default WhatIsOnStoryBlok
