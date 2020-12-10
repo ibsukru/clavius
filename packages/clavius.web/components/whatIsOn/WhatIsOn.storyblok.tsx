@@ -1,4 +1,4 @@
-import { EditableContent, StoryBlokPropType, StoryPropType } from '..'
+import { EditableContent, StoryBlokPropType, WithBlokType } from '..'
 import SbEditable from 'storyblok-react'
 import WhatIsOn from './whatIsOn'
 
@@ -8,7 +8,7 @@ type WhatIsOnStoryBlokPropType = StoryBlokPropType<{
 }>
 
 const WhatIsOnStoryBlok: React.FunctionComponent<
-  StoryPropType<WhatIsOnStoryBlokPropType>
+  WithBlokType<WhatIsOnStoryBlokPropType>
 > = props => {
   const { blok } = props
 

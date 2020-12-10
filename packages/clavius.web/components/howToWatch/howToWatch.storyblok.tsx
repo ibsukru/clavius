@@ -1,15 +1,16 @@
-import SbEditable, { SbEditableContent } from 'storyblok-react'
-import { StoryPropType, TableBlokType } from '..'
+import SbEditable from 'storyblok-react'
+import { TableBlokType, WithStoryBlok } from '..'
 import HowToWatch from './howToWatch'
 
-type HowToWatchStoryBlokPropType = SbEditableContent & {
+type HowToWatchStoryBlokPropType = {
   title: string
   platforms: TableBlokType
 }
 
-const HowToWatchStoryBlok: React.FunctionComponent<
-  StoryPropType<HowToWatchStoryBlokPropType>
-> = props => {
+const HowToWatchStoryBlok: WithStoryBlok<
+  typeof HowToWatch,
+  HowToWatchStoryBlokPropType
+> = Component => props => {
   const { blok } = props
 
   const { platforms, title } = blok
@@ -23,8 +24,6 @@ const HowToWatchStoryBlok: React.FunctionComponent<
       }>
     | undefined
   >((acc, item) => {
-    if (!item || item.body) return acc
-
     const { body } = item
 
     const { value: type } = body[0]
@@ -43,7 +42,7 @@ const HowToWatchStoryBlok: React.FunctionComponent<
 
   return (
     <SbEditable content={blok}>
-      <HowToWatch {...{ title, list }} />
+      <Component {...{ title, list }} />
     </SbEditable>
   )
 }

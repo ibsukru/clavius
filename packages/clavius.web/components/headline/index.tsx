@@ -1,6 +1,7 @@
 import HeadlinePricing from './headlinePricing'
-import HeadlineStoryBlok from './headline.storyblok'
+import WithStoryBlok from './headline.storyblok'
+import Headline from './headline'
 
-export default HeadlineStoryBlok
+export default WithStoryBlok(Headline)
 
 export { HeadlinePricing }

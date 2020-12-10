@@ -1,5 +1,5 @@
 import SbEditable from 'storyblok-react'
-import { assetType, StoryBlokPropType, StoryPropType } from '../..'
+import { assetType, StoryBlokPropType, WithBlokType } from '../..'
 import WhatIsOnEvent from './whatIsOnEvent'
 
 type WhatIsOnEventStoryBlokPropType = StoryBlokPropType<{
@@ -8,7 +8,7 @@ type WhatIsOnEventStoryBlokPropType = StoryBlokPropType<{
 }>
 
 const WhatIsOnEventStoryBlok: React.FunctionComponent<
-  StoryPropType<WhatIsOnEventStoryBlokPropType>
+  WithBlokType<WhatIsOnEventStoryBlokPropType>
 > = props => {
   const { blok } = props
 

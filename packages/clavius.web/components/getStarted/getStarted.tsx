@@ -2,111 +2,92 @@ import React from 'react'
 import SbEditable, { SbEditableContent } from 'storyblok-react'
 import Markdown from 'react-markdown'
 
-const GetStarted: React.FunctionComponent<{
-  blok: SbEditableContent & {
-    title: string
-    steps: {
-      tbody: { body: { value: string; _uid: string }[] }[]
-      thead: { value: string }[]
-    }
-  }
-}> = props => {
-  const { blok } = props
-  const { steps, title } = blok
-  const { tbody } = steps
-
-  const list = tbody.reduce<{ title: string; description: string }[]>(
-    (acc, item) => {
-      const [title, description] = item.body
-      return acc.concat({
-        title: title.value,
-        description: description.value,
-      })
-    },
-    [],
-  )
+type GetStartedPropType = {
+  title: string
+  steps?: Array<{ title: string; description: string }>
+}
+const GetStarted: React.FunctionComponent<GetStartedPropType> = props => {
+  const { steps, title } = props
 
   return (
-    <SbEditable content={blok}>
-      <section className="getStarted">
-        <style jsx>{`
-          .getStarted {
-            padding: 10px 0;
-            margin: 0 auto;
-            color: var(--background);
-            background-color: var(--shade-7);
-            text-align: center;
-          }
+    <section className="getStarted">
+      <style jsx>{`
+        .getStarted {
+          padding: 10px 0;
+          margin: 0 auto;
+          color: var(--background);
+          background-color: var(--shade-7);
+          text-align: center;
+        }
 
-          .getStarted-header {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-            margin: 0 0 30px 0;
-          }
+        .getStarted-header {
+          text-align: center;
+          font-size: 2rem;
+          font-weight: bold;
+          margin: 0 0 30px 0;
+        }
 
-          .getStarted-wrapper {
-            max-width: 60%;
-            margin: 0 auto;
-          }
+        .getStarted-wrapper {
+          max-width: 60%;
+          margin: 0 auto;
+        }
 
-          .getStarted-stepHeader {
-            font-weight: bold;
-            margin-bottom: 10px;
-          }
+        .getStarted-stepHeader {
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
 
+        .getStarted-steps {
+          margin: 0 auto;
+          padding: 10px;
+          display: flex;
+          gap: 20px;
+          flex-direction: column;
+        }
+
+        @media (min-width: 960px) {
           .getStarted-steps {
-            margin: 0 auto;
-            padding: 10px;
-            display: flex;
-            gap: 20px;
-            flex-direction: column;
+            flex-direction: row;
           }
+        }
 
-          @media (min-width: 960px) {
-            .getStarted-steps {
-              flex-direction: row;
-            }
-          }
+        .getStarted-step {
+          background-color: var(--foreground);
+          margin: 0 auto;
+          padding: 10px;
+          border-radius: var(--radius);
+          width: 100%;
+        }
 
-          .getStarted-step {
-            background-color: var(--foreground);
-            margin: 0 auto;
-            padding: 10px;
-            border-radius: var(--radius);
-            width: 100%;
-          }
+        .getStarted-number {
+          display: block;
+          text-align: center;
+        }
 
-          .getStarted-number {
-            display: block;
-            text-align: center;
-          }
+        .getStarted-description {
+          font-size: 0.875rem;
+        }
+      `}</style>
 
-          .getStarted-description {
-            font-size: 0.875rem;
-          }
-        `}</style>
-
-        <div className="getStarted-wrapper">
-          <header className="getStarted-header">{title}</header>
-          <div className="getStarted-steps">
-            {list.map((item, index) => {
-              return (
-                <div className="getStarted-step" key={item.title}>
-                  <header className="getStarted-stepHeader">
-                    <span className="number">{index + 1}.</span>
-                    {item.title}
-                  </header>
-                  <div className="getStarted-description">
-                    <Markdown source={item.description} />
-                  </div>
+      <div className="getStarted-wrapper">
+        <header className="getStarted-header">{title}</header>
+        <div className="getStarted-steps">
+          {steps?.map((item, index) => {
+            return (
+              <div className="getStarted-step" key={item.title}>
+                <header className="getStarted-stepHeader">
+                  <span className="number">{index + 1}.</span>
+                  {item.title}
+                </header>
+                <div className="getStarted-description">
+                  <Markdown source={item.description} />
                 </div>
-              )
-            })}
-          </div>
+              </div>
+            )
+          })}
         </div>
-      </section>
-    </SbEditable>
+      </div>
+    </section>
   )
 }
 

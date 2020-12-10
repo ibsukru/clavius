@@ -1,5 +1,5 @@
 import SbEditable from 'storyblok-react'
-import { assetType, StoryBlokPropType, StoryPropType } from '..'
+import { assetType, StoryBlokPropType, WithStoryBlok } from '..'
 import Headline from './headline'
 
 type HeadlineStoryBlokPropType = StoryBlokPropType<{
@@ -17,14 +17,15 @@ type HeadlineStoryBlokPropType = StoryBlokPropType<{
   ]
 }>
 
-const HeadlineStoryBlok: React.FunctionComponent<
-  StoryPropType<HeadlineStoryBlokPropType>
-> = props => {
+const HeadlineStoryBlok: WithStoryBlok<
+  typeof Headline,
+  HeadlineStoryBlokPropType
+> = Component => props => {
   const { blok } = props
 
   return (
     <SbEditable content={blok}>
-      <Headline
+      <Component
         {...{
           text: blok.text,
           logo: blok.logo.filename,
