@@ -1,23 +1,14 @@
 import React from 'react'
-import SbEditable, { SbEditableContent } from 'storyblok-react'
-import Markdown from 'react-markdown'
-import {
-  StoryBlokComponent,
-  StoryBlokPropType,
-  TableBlokType,
-  WithBlokType,
-  WithStoryBlok,
-} from '..'
+import SbEditable from 'storyblok-react'
+import { TableBlokType, WithStoryBlok } from '..'
 import GetStarted from './getStarted'
-
-type GetStartedStoryBlokPropType = {
-  title: string
-  steps: TableBlokType
-}
 
 const GetStartedStoryBlok: WithStoryBlok<
   typeof GetStarted,
-  GetStartedStoryBlokPropType
+  {
+    title: string
+    steps: TableBlokType
+  }
 > = Component => props => {
   const { blok } = props
 

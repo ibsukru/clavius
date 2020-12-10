@@ -1,11 +1,9 @@
 import { DynamicComponent, EditableContent } from '..'
 
-type WhatIsOnPropType = {
+const WhatIsOn: React.FunctionComponent<{
   title: string
   events?: Array<EditableContent>
-}
-
-const WhatIsOn: React.FunctionComponent<WhatIsOnPropType> = props => {
+}> = props => {
   const { title, events } = props
 
   return (

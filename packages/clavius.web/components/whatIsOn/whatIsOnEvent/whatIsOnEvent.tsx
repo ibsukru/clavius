@@ -1,12 +1,10 @@
 import { Fragment } from 'react'
 import SbEditable from 'storyblok-react'
 
-type WhatIsOnEventPropType = {
+const WhatIsOnEvent: React.FunctionComponent<{
   alt: string
   src: string
-}
-
-const WhatIsOnEvent: React.FunctionComponent<WhatIsOnEventPropType> = props => {
+}> = props => {
   const blok = props
   const { alt, src } = blok
 

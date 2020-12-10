@@ -2,14 +2,12 @@ import SbEditable from 'storyblok-react'
 import { TableBlokType, WithStoryBlok } from '..'
 import HowToWatch from './howToWatch'
 
-type HowToWatchStoryBlokPropType = {
-  title: string
-  platforms: TableBlokType
-}
-
 const HowToWatchStoryBlok: WithStoryBlok<
   typeof HowToWatch,
-  HowToWatchStoryBlokPropType
+  {
+    title: string
+    platforms: TableBlokType
+  }
 > = Component => props => {
   const { blok } = props
 

@@ -1,3 +1,4 @@
-import WhatIsOnStoryBlok from './WhatIsOn.storyblok'
+import WhatIsOn from './whatIsOn'
+import WithStoryBlok from './WhatIsOn.storyblok'
 
-export default WhatIsOnStoryBlok
+export default WithStoryBlok(WhatIsOn)
