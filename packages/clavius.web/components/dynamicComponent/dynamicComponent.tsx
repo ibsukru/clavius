@@ -3,13 +3,13 @@ import Placeholder from '../placeholder'
 import { Components, DynamicComponentType } from '.'
 
 const DynamicComponent: DynamicComponentType = ({ blok }) => {
-  if (typeof Components[blok.component] === 'undefined') {
+  const Component = Components[blok.component]
+
+  if (!Component) {
     return <Placeholder componentName={blok.component} />
   }
 
-  const Component = Components[blok.component]
-
-  return <Component blok={blok} />
+  return <Component {...{ blok }} />
 }
 
 export default DynamicComponent
