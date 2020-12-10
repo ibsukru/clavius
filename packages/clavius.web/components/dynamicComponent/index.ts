@@ -1,6 +1,6 @@
 import DynamicComponent from './dynamicComponent'
 import { InjectStoryBlokPropType } from '..'
-import Components from './dynamicComponent.components'
+import Components from './dynamicComponent.getComponent'
 
 export type DynamicComponentType = InjectStoryBlokPropType<{}>
 
