@@ -5,7 +5,7 @@ import WhatIsOnEvent from '../whatIsOn/whatIsOnEvent'
 import WhatIsIncluded from '../whatIsIncluded'
 import GetStarted from '../getStarted'
 import HowToWatch from '../howToWatch'
-import FAQ from '../faq'
+import Faq from '../faq'
 import Footer from '../footer'
 import React from 'react'
 import Placeholder from '../placeholder'
@@ -18,7 +18,7 @@ const Components = {
   whatIsIncluded: WhatIsIncluded,
   getStarted: GetStarted,
   howToWatch: HowToWatch,
-  faq: FAQ,
+  faq: Faq,
   footer: Footer,
 }
 

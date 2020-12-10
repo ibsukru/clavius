@@ -4,7 +4,7 @@ import Page from './page'
 import WhatIsOn from './whatIsOn'
 import GetStarted from './getStarted'
 import HowToWatch from './howToWatch'
-import FAQ from './faq'
+import Faq from './faq'
 import Footer from './footer'
 import { Spinner } from './common'
 import DynamicComponent from './dynamicComponent'
@@ -37,6 +37,6 @@ export {
   WhatIsOn,
   GetStarted,
   HowToWatch,
-  FAQ,
+  Faq as FAQ,
   Footer,
 }

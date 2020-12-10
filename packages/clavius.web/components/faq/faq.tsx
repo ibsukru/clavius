@@ -1,22 +1,10 @@
 import { Fragment, useState } from 'react'
+import { FaqType } from '.'
 
-type componentType = { component: string }
-const FAQ: React.FunctionComponent<{
-  blok: componentType & {
-    questions: Array<
-      componentType & {
-        panels: Array<{
-          title: string
-          content: string
-          _uid: string
-        }>
-      }
-    >
-  }
-}> = props => {
+const Faq: FaqType = props => {
   const [index, setIndex] = useState<number | undefined>()
 
-  const [accordion] = props.blok.questions
+  const [accordion] = props.questions
 
   return (
     <Fragment>
@@ -65,4 +53,4 @@ const FAQ: React.FunctionComponent<{
   )
 }
 
-export default FAQ
+export default Faq
