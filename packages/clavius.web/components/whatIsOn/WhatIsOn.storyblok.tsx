@@ -1,13 +1,7 @@
-import { EditableContentTpe, InjectStoryBlok, EditableComponent } from '..'
-import WhatIsOn from './whatIsOn'
+import { WhatIsOnStoryBlokType } from '.'
+import { EditableComponent } from '..'
 
-const WhatIsOnStoryBlok: InjectStoryBlok<
-  typeof WhatIsOn,
-  {
-    title: string
-    events: EditableContentTpe[]
-  }
-> = Component => props => {
+const WhatIsOnStoryBlok: WhatIsOnStoryBlokType = Component => props => {
   const { blok } = props
 
   return (

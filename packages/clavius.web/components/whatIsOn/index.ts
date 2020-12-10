@@ -1,4 +1,18 @@
+import { EditableContentTpe, InjectStoryBlok } from '..'
 import WhatIsOn from './whatIsOn'
-import WithStoryBlok from './WhatIsOn.storyblok'
+import inject from './WhatIsOn.storyblok'
 
-export default WithStoryBlok(WhatIsOn)
+export type WhatIsOnType = React.FunctionComponent<{
+  title: string
+  events?: Array<EditableContentTpe>
+}>
+
+export type WhatIsOnStoryBlokType = InjectStoryBlok<
+  typeof WhatIsOn,
+  {
+    title: string
+    events: EditableContentTpe[]
+  }
+>
+
+export default inject(WhatIsOn)

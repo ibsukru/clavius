@@ -1,9 +1,7 @@
 import { Fragment } from 'react'
+import { WhatIsOnEventType } from '.'
 
-const WhatIsOnEvent: React.FunctionComponent<{
-  alt: string
-  src: string
-}> = props => {
+const WhatIsOnEvent: WhatIsOnEventType = props => {
   const blok = props
   const { alt, src } = blok
 

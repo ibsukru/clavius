@@ -1,7 +1,7 @@
-const Footer: React.FunctionComponent<{
-  blok: { links: Array<{ key: string; value: string; _uid: string }> }
-}> = props => {
-  const { links } = props.blok
+import { FooterType } from '.'
+
+const Footer: FooterType = props => {
+  const { links } = props
   return (
     <footer>
       <style jsx>{`
