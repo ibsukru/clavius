@@ -7,4 +7,6 @@ export type HeadlinePricingPropType = {
   signup: string
 }
 
+export type HeadlinePricingType = React.FunctionComponent<HeadlinePricingPropType>
+
 export default HeadlinePricing

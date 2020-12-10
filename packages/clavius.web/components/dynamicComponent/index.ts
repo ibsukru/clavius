@@ -1,3 +1,7 @@
 import DynamicComponent from './dynamicComponent'
+import { InjectStoryBlokPropType } from '..'
+import Components from './dynamicComponent.components'
 
-export default DynamicComponent
+export type DynamicComponentType = InjectStoryBlokPropType<{}>
+
+export { DynamicComponent as default, Components }

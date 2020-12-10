@@ -15,6 +15,10 @@ export const EditableComponent = SbEditable
 
 export type EditableContentTpe = SbEditableContent
 
+export type InjectStoryBlokPropType<T> = React.FunctionComponent<{
+  blok: EditableContentTpe & T
+}>
+
 export type InjectStoryBlok<C, T> = (
   Component: C,
 ) => React.FunctionComponent<{
