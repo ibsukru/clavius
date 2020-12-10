@@ -1,10 +1,8 @@
 import React from 'react'
 import Markdown from 'react-markdown'
+import { GetStartedType } from '.'
 
-const GetStarted: React.FunctionComponent<{
-  title: string
-  steps?: Array<{ title: string; description: string }>
-}> = props => {
+const GetStarted: GetStartedType = props => {
   const { steps, title } = props
 
   return (

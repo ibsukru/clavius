@@ -21,7 +21,7 @@ const HeadlinePricing: React.FunctionComponent<HeadlinePricingPropType> = props 
         .pricing-header {
           font-size: 1.475rem;
           font-weight: bold;
-          line-height: 1rem;
+          line-height: 1rem;m
         }
 
         .pricing-features {

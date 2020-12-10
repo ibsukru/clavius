@@ -1,5 +1,4 @@
 import Headline from '../headline'
-import Navigation from '../navigation'
 import Rails from '../rails'
 import WhatIsOn from '../whatIsOn'
 import WhatIsOnEvent from '../whatIsOn/whatIsOnEvent'
@@ -12,7 +11,6 @@ import React from 'react'
 import Placeholder from '../placeholder'
 
 const Components = {
-  navigation: Navigation,
   headline: Headline,
   rails: Rails,
   whatIsOn: WhatIsOn,

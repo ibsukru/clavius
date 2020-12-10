@@ -1,17 +1,9 @@
 import React from 'react'
 import Markdown from 'react-markdown'
+import { HowToWatchType } from '.'
 import style from './howToWatch.styles'
 
-type HowToWatchPropType = {
-  list?: Array<{
-    type: string
-    title: string
-    devices: string
-  }>
-  title: string
-}
-
-const HowToWatch: React.FunctionComponent<HowToWatchPropType> = props => {
+const HowToWatch: HowToWatchType = props => {
   const { list, title } = props
 
   return (

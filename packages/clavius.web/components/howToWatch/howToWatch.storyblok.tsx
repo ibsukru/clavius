@@ -1,13 +1,7 @@
-import { TableBlokType, WithStoryBlok, EditableComponent } from '..'
-import HowToWatch from './howToWatch'
+import { HowToWatchStoryBlokType } from '.'
+import { EditableComponent } from '..'
 
-const HowToWatchStoryBlok: WithStoryBlok<
-  typeof HowToWatch,
-  {
-    title: string
-    platforms: TableBlokType
-  }
-> = Component => props => {
+const HowToWatchStoryBlok: HowToWatchStoryBlokType = Component => props => {
   const { blok } = props
 
   const { platforms, title } = blok

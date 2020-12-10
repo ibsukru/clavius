@@ -1,15 +1,6 @@
-import { HeadlinePricing } from '.'
-import { HeadlinePricingPropType } from './headlinePricing'
+import { HeadlinePricing, HeadlineType } from '.'
 
-type HeadlinePropType = {
-  text: string
-  logo: string
-  explore: string
-  bg: string
-  pricing: HeadlinePricingPropType
-}
-
-const Headline: React.FunctionComponent<HeadlinePropType> = props => {
+const Headline: HeadlineType = props => {
   const { text, logo, explore, bg, pricing } = props
 
   return (

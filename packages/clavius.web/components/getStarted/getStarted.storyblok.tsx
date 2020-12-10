@@ -1,14 +1,7 @@
-import React from 'react'
-import { TableBlokType, WithStoryBlok, EditableComponent } from '..'
-import GetStarted from './getStarted'
+import { EditableComponent } from '..'
+import { GetStartedStoryBlokType } from '.'
 
-const GetStartedStoryBlok: WithStoryBlok<
-  typeof GetStarted,
-  {
-    title: string
-    steps: TableBlokType
-  }
-> = Component => props => {
+const GetStartedStoryBlok: GetStartedStoryBlokType = Component => props => {
   const { blok } = props
 
   const { steps, title } = blok

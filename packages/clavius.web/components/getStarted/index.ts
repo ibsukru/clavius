@@ -1,4 +1,18 @@
+import { TableBlokType, WithStoryBlok } from '..'
 import GetStarted from './getStarted'
-import WithStoryBlok from './getStarted.storyblok'
+import inject from './getStarted.storyblok'
 
-export default WithStoryBlok(GetStarted)
+export type GetStartedStoryBlokType = WithStoryBlok<
+  typeof GetStarted,
+  {
+    title: string
+    steps: TableBlokType
+  }
+>
+
+export type GetStartedType = React.FunctionComponent<{
+  title: string
+  steps?: Array<{ title: string; description: string }>
+}>
+
+export default inject(GetStarted)
