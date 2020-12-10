@@ -1,5 +1,4 @@
 import { Fragment } from 'react'
-import SbEditable from 'storyblok-react'
 
 const WhatIsOnEvent: React.FunctionComponent<{
   alt: string

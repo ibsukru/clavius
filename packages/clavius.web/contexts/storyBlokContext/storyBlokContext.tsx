@@ -1,13 +1,15 @@
 import { createContext, useEffect, useState } from 'react'
-import { StoryBlokContextType, storyBlokType } from '.'
+import { StoryBlokContextType, StoryBlokResponseType } from '.'
 import defaultsDeep from 'lodash.defaultsdeep'
 
 export const StoryBlokContext = createContext<StoryBlokContextType>({})
 
 export const StoryBlokContextProvider: React.FunctionComponent<{
-  storyBlok: storyBlokType
+  storyBlok: StoryBlokResponseType
 }> = ({ children, ...rest }) => {
-  const [storyBlok, setStoryBlock] = useState<storyBlokType>(rest.storyBlok)
+  const [storyBlok, setStoryBlock] = useState<StoryBlokResponseType>(
+    rest.storyBlok,
+  )
 
   const value: StoryBlokContextType = {
     storyBlok,

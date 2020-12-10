@@ -1,5 +1,10 @@
-import SbEditable from 'storyblok-react'
-import { assetType, StoryBlokPropType, WithStoryBlok } from '..'
+import {
+  assetType,
+  StoryBlokPropType,
+  WithStoryBlok,
+  EditableComponent,
+} from '..'
+
 import Headline from './headline'
 
 type HeadlineStoryBlokPropType = StoryBlokPropType<{
@@ -24,7 +29,7 @@ const HeadlineStoryBlok: WithStoryBlok<
   const { blok } = props
 
   return (
-    <SbEditable content={blok}>
+    <EditableComponent content={blok}>
       <Component
         {...{
           text: blok.text,
@@ -34,7 +39,7 @@ const HeadlineStoryBlok: WithStoryBlok<
           pricing: blok.pricing[0],
         }}
       />
-    </SbEditable>
+    </EditableComponent>
   )
 }
 

@@ -1,12 +1,10 @@
 import React from 'react'
-import SbEditable, { SbEditableContent } from 'storyblok-react'
 import Markdown from 'react-markdown'
 
-type GetStartedPropType = {
+const GetStarted: React.FunctionComponent<{
   title: string
   steps?: Array<{ title: string; description: string }>
-}
-const GetStarted: React.FunctionComponent<GetStartedPropType> = props => {
+}> = props => {
   const { steps, title } = props
 
   return (

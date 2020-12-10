@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import App from 'next/app'
 
 import { resetStyles, htmlStyles, nprogressStyles } from '../styles'
-import { storyBlokType } from '../contexts/storyBlokContext'
-class MyApp extends App<{ storyBlock: storyBlokType }> {
+import { StoryBlokResponseType } from '../contexts/storyBlokContext'
+class MyApp extends App<{ storyBlock: StoryBlokResponseType }> {
   render() {
     const { Component, pageProps } = this.props
 

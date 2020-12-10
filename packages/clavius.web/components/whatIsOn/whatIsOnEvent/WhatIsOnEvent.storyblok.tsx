@@ -1,5 +1,4 @@
-import SbEditable from 'storyblok-react'
-import { assetType, WithStoryBlok } from '../..'
+import { assetType, WithStoryBlok, EditableComponent } from '../..'
 import WhatIsOnEvent from './whatIsOnEvent'
 
 const WhatIsOnEventStoryBlok: WithStoryBlok<
@@ -12,9 +11,9 @@ const WhatIsOnEventStoryBlok: WithStoryBlok<
   const { blok } = props
 
   return (
-    <SbEditable content={blok}>
+    <EditableComponent content={blok}>
       <Component {...{ src: blok.img.filename, alt: blok.alt }} />
-    </SbEditable>
+    </EditableComponent>
   )
 }
 

@@ -1,5 +1,4 @@
-import SbEditable from 'storyblok-react'
-import { TableBlokType, WithStoryBlok } from '..'
+import { TableBlokType, WithStoryBlok, EditableComponent } from '..'
 import HowToWatch from './howToWatch'
 
 const HowToWatchStoryBlok: WithStoryBlok<
@@ -39,9 +38,9 @@ const HowToWatchStoryBlok: WithStoryBlok<
   }, undefined)
 
   return (
-    <SbEditable content={blok}>
+    <EditableComponent content={blok}>
       <Component {...{ title, list }} />
-    </SbEditable>
+    </EditableComponent>
   )
 }
 

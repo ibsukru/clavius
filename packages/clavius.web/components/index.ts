@@ -13,7 +13,7 @@ import DynamicComponent from './dynamicComponent'
 import Placeholder from './placeholder'
 import SbEditable, { SbEditableContent } from 'storyblok-react'
 
-export type WithBlokType<T> = { blok: Editable & T }
+export type WithBlokType<T> = { blok: EditableType & T }
 export type StoryBlokComponent<T> = React.FunctionComponent<{
   blok: EditableContent & T
 }>
@@ -28,7 +28,8 @@ export type TableBlokType = {
   tbody: Array<{ body: Array<SbEditableContent & { value: string }> }>
 }
 
-export type Editable = SbEditable
+export const EditableComponent = SbEditable
+export type EditableType = SbEditable
 export type EditableContent = SbEditableContent
 
 export type StoryBlokPropType<T> = EditableContent & T

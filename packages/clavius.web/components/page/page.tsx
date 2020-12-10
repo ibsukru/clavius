@@ -1,8 +1,8 @@
 import { DynamicComponent } from '..'
-import SbEditable from 'storyblok-react'
 import { FeatureToggleContextProvider } from '../../contexts'
 import React from 'react'
 import { useStoryBlokContext } from '../../hooks'
+import { EditableComponent } from '..'
 
 const Page = () => {
   const { storyBlok } = useStoryBlokContext()
@@ -50,13 +50,13 @@ const Page = () => {
         }
       }, {})}
     >
-      <SbEditable content={content}>
+      <EditableComponent content={content}>
         <main>
           {content.body?.map(blok => {
             return <DynamicComponent blok={blok} key={blok._uid} />
           })}
         </main>
-      </SbEditable>
+      </EditableComponent>
     </FeatureToggleContextProvider>
   )
 }

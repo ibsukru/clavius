@@ -1,10 +1,4 @@
-import {
-  EditableContent,
-  StoryBlokPropType,
-  WithBlokType,
-  WithStoryBlok,
-} from '..'
-import SbEditable from 'storyblok-react'
+import { EditableContent, WithStoryBlok, EditableComponent } from '..'
 import WhatIsOn from './whatIsOn'
 
 const WhatIsOnStoryBlok: WithStoryBlok<
@@ -17,9 +11,9 @@ const WhatIsOnStoryBlok: WithStoryBlok<
   const { blok } = props
 
   return (
-    <SbEditable content={blok}>
+    <EditableComponent content={blok}>
       <Component {...{ title: blok.title, events: blok.events }} />
-    </SbEditable>
+    </EditableComponent>
   )
 }
 

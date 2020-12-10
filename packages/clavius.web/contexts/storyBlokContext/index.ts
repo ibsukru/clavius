@@ -1,4 +1,4 @@
-import { SbEditableContent } from 'storyblok-react'
+import { EditableContent } from '../../components'
 import { StoryBlokContextProvider, StoryBlokContext } from './storyBlokContext'
 
 export type storyBlokContextType = {
@@ -6,17 +6,17 @@ export type storyBlokContextType = {
 }
 
 export type StoryBlokContextType = {
-  storyBlok?: storyBlokType
+  storyBlok?: StoryBlokResponseType
 }
 
 export { StoryBlokContextProvider, StoryBlokContext }
 
-export type storyBlokType = {
+export type StoryBlokResponseType = {
   perPage: number
   total: number
   data?: {
     story: {
-      content: SbEditableContent & {
+      content: EditableContent & {
         experiments: {
           tbody: { body: { value: string; _uid: string }[] }[]
           thead: { value: string }[]

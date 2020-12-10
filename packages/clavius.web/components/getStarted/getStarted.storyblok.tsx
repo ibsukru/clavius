@@ -1,6 +1,5 @@
 import React from 'react'
-import SbEditable from 'storyblok-react'
-import { TableBlokType, WithStoryBlok } from '..'
+import { TableBlokType, WithStoryBlok, EditableComponent } from '..'
 import GetStarted from './getStarted'
 
 const GetStartedStoryBlok: WithStoryBlok<
@@ -16,7 +15,7 @@ const GetStartedStoryBlok: WithStoryBlok<
   const { tbody } = steps
 
   return (
-    <SbEditable content={blok}>
+    <EditableComponent content={blok}>
       <Component
         {...{
           title,
@@ -32,7 +31,7 @@ const GetStartedStoryBlok: WithStoryBlok<
           ),
         }}
       />
-    </SbEditable>
+    </EditableComponent>
   )
 }
 

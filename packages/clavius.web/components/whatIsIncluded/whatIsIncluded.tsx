@@ -1,4 +1,4 @@
-import SbEditable from 'storyblok-react'
+import { EditableComponent } from '..'
 import Markdown from 'react-markdown'
 
 const WhatIsIncluded = props => {
@@ -6,7 +6,7 @@ const WhatIsIncluded = props => {
   const { title, subtitle, features, signup } = blok
 
   return (
-    <SbEditable content={blok}>
+    <EditableComponent content={blok}>
       <section className="whatIsIncluded">
         <style jsx>{`
           .whatIsIncluded {
@@ -76,7 +76,7 @@ const WhatIsIncluded = props => {
           </a>
         </div>
       </section>
-    </SbEditable>
+    </EditableComponent>
   )
 }
 

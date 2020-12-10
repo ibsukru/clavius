@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import { Page } from '../components'
 import { StoryBlokContextProvider } from '../contexts'
-import { storyBlokType } from '../contexts/storyBlokContext'
+import { StoryBlokResponseType } from '../contexts/storyBlokContext'
 import { NextPage } from 'next'
 import { storyBlokService } from 'clavius.lib/src'
 
 const Index: NextPage<{
-  storyBlok: storyBlokType | null
+  storyBlok: StoryBlokResponseType | null
 }> = props => {
   const { storyBlok } = props
 
