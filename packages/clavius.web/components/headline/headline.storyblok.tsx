@@ -1,8 +1,8 @@
-import { AssetBlokType, WithStoryBlok, EditableComponent } from '..'
+import { AssetBlokType, InjectStoryBlok, EditableComponent } from '..'
 
 import Headline from './headline'
 
-const HeadlineStoryBlok: WithStoryBlok<
+const HeadlineStoryBlok: InjectStoryBlok<
   typeof Headline,
   {
     text: string

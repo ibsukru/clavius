@@ -1,4 +1,4 @@
-import { WithStoryBlok } from '..'
+import { InjectStoryBlok } from '..'
 import WhatIsIncluded from './whatIsIncluded'
 import inject from './whatIsIncluded.storyblok'
 
@@ -9,7 +9,7 @@ export type WhatIsIncludedType = React.FunctionComponent<{
   signup: string
 }>
 
-export type WhatIsIncludedStoryBlokType = WithStoryBlok<
+export type WhatIsIncludedStoryBlokType = InjectStoryBlok<
   WhatIsIncludedType,
   {
     title: string

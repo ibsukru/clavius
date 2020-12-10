@@ -1,7 +1,7 @@
-import { EditableContentTpe, WithStoryBlok, EditableComponent } from '..'
+import { EditableContentTpe, InjectStoryBlok, EditableComponent } from '..'
 import WhatIsOn from './whatIsOn'
 
-const WhatIsOnStoryBlok: WithStoryBlok<
+const WhatIsOnStoryBlok: InjectStoryBlok<
   typeof WhatIsOn,
   {
     title: string

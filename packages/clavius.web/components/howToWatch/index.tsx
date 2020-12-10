@@ -1,6 +1,6 @@
 import HowToWatchComponent from './howToWatch'
 import inject from './howToWatch.storyblok'
-import { TableBlokType, WithStoryBlok } from '..'
+import { TableBlokType, InjectStoryBlok } from '..'
 
 export type HowToWatchType = React.FunctionComponent<{
   list?: Array<{
@@ -11,7 +11,7 @@ export type HowToWatchType = React.FunctionComponent<{
   title: string
 }>
 
-export type HowToWatchStoryBlokType = WithStoryBlok<
+export type HowToWatchStoryBlokType = InjectStoryBlok<
   HowToWatchType,
   {
     title: string

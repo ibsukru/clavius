@@ -1,7 +1,7 @@
-import { AssetBlokType, WithStoryBlok, EditableComponent } from '../..'
+import { AssetBlokType, InjectStoryBlok, EditableComponent } from '../..'
 import WhatIsOnEvent from './whatIsOnEvent'
 
-const WhatIsOnEventStoryBlok: WithStoryBlok<
+const WhatIsOnEventStoryBlok: InjectStoryBlok<
   typeof WhatIsOnEvent,
   {
     alt: string

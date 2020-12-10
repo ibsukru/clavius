@@ -1,8 +1,8 @@
-import { TableBlokType, WithStoryBlok } from '..'
+import { TableBlokType, InjectStoryBlok } from '..'
 import GetStarted from './getStarted'
 import inject from './getStarted.storyblok'
 
-export type GetStartedStoryBlokType = WithStoryBlok<
+export type GetStartedStoryBlokType = InjectStoryBlok<
   typeof GetStarted,
   {
     title: string
