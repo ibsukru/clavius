@@ -1,7 +1,7 @@
 {
   "name": "clavius",
   "version": "1.0.0",
-  "description": "Mutation.app monorepo (▀̿Ĺ̯▀̿ ̿)",
+  "description": "clavius cms (▀̿Ĺ̯▀̿ ̿)",
   "main": "index.js",
   "repository": "git@github.com:mutationapp/clavius.git",
   "author": "ibsukru",
