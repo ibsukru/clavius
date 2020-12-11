@@ -4,9 +4,7 @@ import baseConfig from './next.config'
 import Server from 'next/dist/next-server/server/next-server'
 import bodyParser from 'body-parser'
 import next from 'next'
-import dotenv from 'dotenv'
 import { storyBlokService } from 'clavius.lib/src'
-dotenv.config()
 
 // c(▀̿Ĺ̯▀̿ ̿).
 ;(async (server: Application, app: Server) => {

@@ -10,6 +10,7 @@ import { Spinner } from './common'
 import DynamicComponent from './dynamicComponent'
 import Placeholder from './placeholder'
 import SbEditable, { SbEditableContent } from 'storyblok-react'
+import Error from './error'
 
 export const EditableComponent = SbEditable
 
@@ -43,4 +44,5 @@ export {
   HowToWatch,
   Faq as FAQ,
   Footer,
+  Error,
 }
