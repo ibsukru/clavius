@@ -1,7 +1,6 @@
 import Document, { Head, Main, NextScript, Html } from 'next/document'
 import Cookies from 'js-cookie'
 import flushToReact from 'styled-jsx/server'
-import { token } from 'clavius.lib/src/storyblokService'
 
 export default class MyDocument extends Document {
   render() {
@@ -21,7 +20,10 @@ export default class MyDocument extends Document {
           />
           {flushToReact()}
           <script
-            src={'//app.storyblok.com/f/storyblok-latest.js?t=' + token}
+            src={
+              '//app.storyblok.com/f/storyblok-latest.js?t=' +
+              'vmYW2YhFe70g4j3htm42swtt'
+            }
           ></script>
         </Head>
         <body>

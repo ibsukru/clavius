@@ -4,7 +4,7 @@ import baseConfig from './next.config'
 import Server from 'next/dist/next-server/server/next-server'
 import bodyParser from 'body-parser'
 import next from 'next'
-import { storyBlokService } from 'clavius.lib/src'
+import storyBlokService from './storyblokService'
 
 const PORT = process.env.PORT || '1123'
 
