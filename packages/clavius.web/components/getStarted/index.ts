@@ -3,7 +3,7 @@ import GetStarted from './getStarted'
 import inject from './getStarted.storyblok'
 
 export type GetStartedStoryBlokType = InjectStoryBlok<
-  typeof GetStarted,
+  GetStartedType,
   {
     title: string
     steps: TableBlokType
