@@ -8,7 +8,7 @@ import { storyBlokService } from 'clavius.lib/src'
 const Index: NextPage<{
   storyBlok: StoryBlokResponseType | null
 }> = props => {
-  const { storyBlok } = props || {}
+  const { storyBlok } = props
 
   if (!storyBlok)
     return (
@@ -22,20 +22,20 @@ const Index: NextPage<{
   )
 }
 
-// Index.getInitialProps = async ({ query }) => {
-//   const sbService = storyBlokService()
+Index.getInitialProps = async ({ query }) => {
+  const sbService = storyBlokService()
 
-//   try {
-//     return {
-//       storyBlok: await sbService.get(`cdn/stories/${query.slug || 'home'}`, {}),
-//     }
-//   } catch (error) {
-//     console.log(`ERROR`, error)
-//   }
+  try {
+    return {
+      storyBlok: await sbService.get(`cdn/stories/${query.slug || 'home'}`, {}),
+    }
+  } catch (error) {
+    console.log(`ERROR`, error)
+  }
 
-//   return {
-//     storyBlok: null,
-//   }
-// }
+  return {
+    storyBlok: null,
+  }
+}
 
 export default Index
