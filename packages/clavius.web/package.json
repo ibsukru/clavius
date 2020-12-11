@@ -23,7 +23,8 @@
     "react-dom": "^17.0.1",
     "react-markdown": "^5.0.3",
     "storyblok-js-client": "^3.2.0",
-    "storyblok-react": "^0.1.1"
+    "storyblok-react": "^0.1.1",
+    "mutation.lib": "1.0.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.9",
