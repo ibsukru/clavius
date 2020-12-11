@@ -30,7 +30,6 @@
     "mutate": "mutate"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.12.5",
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/plugin-syntax-jsx": "^7.12.1",
@@ -77,6 +76,7 @@
     ]
   },
   "dependencies": {
+    "@babel/runtime": "^7.12.5",
     "dotenv": "^8.2.0",
     "lodash.defaultsdeep": "^4.6.1",
     "nodemon": "^2.0.6"
