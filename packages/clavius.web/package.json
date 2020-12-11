@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "dev": "nodemon dist",
-    "build": "yarn build:next && yarn build:server",
+    "build": "yarn build:next & yarn build:server",
     "build:next": "next build",
     "build:server": "yarn run babel server -d --out-dir dist --extensions '.ts,.tsx'",
     "start": "node dist",
