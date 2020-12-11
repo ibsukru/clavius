@@ -2,7 +2,6 @@ const { INIT_CWD } = process.env
 
 const jestDir = `${INIT_CWD}`
 
-console.log(`jestDir`, jestDir)
 module.exports = {
   preset: 'ts-jest/presets/js-with-ts',
   testEnvironment: 'node',
