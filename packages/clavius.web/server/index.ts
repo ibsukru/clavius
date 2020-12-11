@@ -8,7 +8,7 @@ import { storyBlokService } from 'clavius.lib/src'
 
 // c(▀̿Ĺ̯▀̿ ̿).
 ;(async (server: Application, app: Server) => {
-  const port = 1123
+  const port = process.env.PORT || '1123'
 
   const handle = app.getRequestHandler()
   await app.prepare()
@@ -42,7 +42,7 @@ import { storyBlokService } from 'clavius.lib/src'
   })
 
   server.get('*', async (request, response) => {
-    return response.send('sadasdas')
+    return handle(request, response)
   })
 
   server.listen(port, () => {
@@ -53,6 +53,6 @@ import { storyBlokService } from 'clavius.lib/src'
   next({
     dev: process.env.NODE_ENV !== 'production',
     customServer: true,
-    // conf: baseConfig,
+    conf: baseConfig,
   }),
 )
