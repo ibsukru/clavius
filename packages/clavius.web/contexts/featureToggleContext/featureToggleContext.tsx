@@ -8,10 +8,10 @@ export const FeatureToggleContext = createContext<FeatureToggleContextType>({
 })
 
 export const FeatureToggleContextProvider: React.FunctionComponent<{
-  featureToggles: featureTogglesType
+  featureToggles?: featureTogglesType
 }> = ({ children, ...rest }) => {
   const [featureToggles, setFeatureToggles] = useState<featureTogglesType>(
-    rest.featureToggles,
+    rest.featureToggles || {},
   )
 
   const value: FeatureToggleContextType = {

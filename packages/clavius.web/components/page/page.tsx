@@ -3,6 +3,7 @@ import { FeatureToggleContextProvider } from '../../contexts'
 import React from 'react'
 import { useStoryBlokContext } from '../../hooks'
 import { EditableComponent } from '..'
+import mapFeatureToggles from './mapFeatureToggles'
 
 const Page = () => {
   const { storyBlok } = useStoryBlokContext()
@@ -37,19 +38,7 @@ const Page = () => {
   const { content } = story
 
   return (
-    <FeatureToggleContextProvider
-      featureToggles={content.experiments?.tbody?.reduce<{
-        [key: string]: string
-      }>((acc, item) => {
-        if (!item?.body) return acc
-
-        const [experiment, variant] = item.body
-        return {
-          ...acc,
-          [experiment.value]: variant.value,
-        }
-      }, {})}
-    >
+    <FeatureToggleContextProvider featureToggles={mapFeatureToggles(storyBlok)}>
       <EditableComponent content={content}>
         <main>
           {content.body?.map(blok => {
