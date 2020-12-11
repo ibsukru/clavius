@@ -53,6 +53,6 @@ import { storyBlokService } from 'clavius.lib/src'
   next({
     dev: process.env.NODE_ENV !== 'production',
     customServer: true,
-    conf: baseConfig,
+    // conf: baseConfig,
   }),
 )
