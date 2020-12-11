@@ -15,7 +15,7 @@ class MyApp extends App<{ storyBlok: StoryBlokResponseType }> {
       pageProps: Component.getInitialProps
         ? await Component.getInitialProps(ctx)
         : {},
-      storyBlok: request['storyblok'],
+      storyBlok: request?.['storyblok'],
     }
   }
 
