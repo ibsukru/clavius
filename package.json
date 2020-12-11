@@ -10,6 +10,10 @@
   "workspaces": [
     "packages/*"
   ],
+  "engines": {
+    "node": ">=14.x",
+    "yarn": "1.x"
+  },
   "scripts": {
     "lint": "eslint 'packages/**/*.{ts,tsx,js,jsx}'",
     "lint:fix": "yarn lint --fix",
