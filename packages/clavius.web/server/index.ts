@@ -21,11 +21,10 @@ dotenv.config()
     }),
   ])
 
-  server.get('/favicon.ico', (_, response) => {
-    return response.status(204).send()
-  })
+  server.get('/:slug', async (request, response, next) => {
+    const slug = request.params.slug as string
+    if (/\.[^/.]+$/.test(slug)) return next()
 
-  server.get('/:slug', async (request, response) => {
     return app.render(request, response, '/index', {
       slug: request.params.slug as string,
     })
