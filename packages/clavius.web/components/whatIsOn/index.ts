@@ -8,7 +8,7 @@ export type WhatIsOnType = React.FunctionComponent<{
 }>
 
 export type WhatIsOnStoryBlokType = InjectStoryBlok<
-  typeof WhatIsOn,
+  WhatIsOnType,
   {
     title: string
     events: EditableContentTpe[]
