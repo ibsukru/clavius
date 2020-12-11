@@ -42,7 +42,7 @@ import { storyBlokService } from 'clavius.lib/src'
   })
 
   server.get('*', async (request, response) => {
-    return handle(request, response)
+    return response.send('sadasdas')
   })
 
   server.listen(port, () => {
