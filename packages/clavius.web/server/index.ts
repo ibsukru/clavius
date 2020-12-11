@@ -21,6 +21,8 @@ dotenv.config()
     }),
   ])
 
+  server.get('/favicon.ico', (req, res) => res.status(204))
+
   server.get('/:slug', async (request, response) => {
     return app.render(request, response, '/index', {
       slug: request.params.slug as string,
