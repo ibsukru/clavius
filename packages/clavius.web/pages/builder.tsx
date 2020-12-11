@@ -5,19 +5,11 @@ import { StoryBlokResponseType } from '../contexts/storyBlokContext'
 import { NextPage } from 'next'
 import { storyBlokService } from 'clavius.lib/src'
 
-const Index = () => {
-  return (
-    <a href="/builder">
-      <style jsx>{`
-        a {
-          display: block;
-          margin: 300px 50px;
-          text-align: center;
-        }
-      `}</style>
-      GO TO BUILDER 👷
-    </a>
-  )
+const Builder: NextPage<{
+  storyBlok: StoryBlokResponseType | null
+}> = props => {
+  console.log(`🚀 ~ file: builder.tsx ~ line 11 ~ props`, props)
+  return <Page />
 }
 
-export default Index
+export default Builder

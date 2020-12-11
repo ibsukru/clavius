@@ -1,12 +1,26 @@
 import React, { Fragment } from 'react'
-import App from 'next/app'
+import App, { AppContext } from 'next/app'
 
 import { resetStyles, htmlStyles } from '../styles'
-import { StoryBlokResponseType } from '../contexts/storyBlokContext'
+import {
+  StoryBlokContextProvider,
+  StoryBlokResponseType,
+} from '../contexts/storyBlokContext'
 
-class MyApp extends App<{ storyBlock: StoryBlokResponseType }> {
+class MyApp extends App<{ storyBlok: StoryBlokResponseType }> {
+  static async getInitialProps({ Component, ctx }: AppContext) {
+    const request = ctx.req
+
+    return {
+      pageProps: Component.getInitialProps
+        ? await Component.getInitialProps(ctx)
+        : {},
+      storyBlok: request['storyblok'],
+    }
+  }
+
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, storyBlok } = this.props
 
     return (
       <Fragment>
@@ -16,7 +30,9 @@ class MyApp extends App<{ storyBlock: StoryBlokResponseType }> {
         <style jsx global>
           {htmlStyles}
         </style>
-        <Component {...pageProps} />
+        <StoryBlokContextProvider storyBlok={storyBlok}>
+          <Component {...pageProps} />
+        </StoryBlokContextProvider>
       </Fragment>
     )
   }

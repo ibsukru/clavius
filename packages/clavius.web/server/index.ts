@@ -5,6 +5,7 @@ import Server from 'next/dist/next-server/server/next-server'
 import bodyParser from 'body-parser'
 import next from 'next'
 import dotenv from 'dotenv'
+import { storyBlokService } from 'clavius.lib/src'
 dotenv.config()
 
 // c(▀̿Ĺ̯▀̿ ̿).
@@ -21,13 +22,25 @@ dotenv.config()
     }),
   ])
 
-  server.get('/:slug', async (request, response, next) => {
-    const slug = request.params.slug as string
+  server.get('/builder/:slug?', async (request, response, next) => {
+    const sbService = storyBlokService()
+    const slug = (request.params.slug as string) || 'home'
     if (/\.[^/.]+$/.test(slug)) return next()
 
-    return app.render(request, response, '/index', {
-      slug: request.params.slug as string,
-    })
+    try {
+      request['storyblok'] = await sbService.get(
+        `cdn/stories/${slug || 'home'}`,
+        {},
+      )
+    } catch (error) {
+      response.status(500)
+
+      return app.render(request, response, '_error', {
+        message: 'Something went wrong',
+      })
+    }
+
+    return app.render(request, response, '/builder')
   })
 
   server.get('*', async (request, response) => {
