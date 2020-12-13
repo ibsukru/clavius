@@ -24,4 +24,8 @@ export type PersonaContextType = {
   key: personaType
 }
 
+export type PersonaContextProviderType = React.FunctionComponent<{
+  personas: personasType
+}>
+
 export { PersonaContextProvider, PersonaContext }

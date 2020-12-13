@@ -11,6 +11,10 @@ export type StoryBlokContextType = {
 
 export { StoryBlokContextProvider, StoryBlokContext }
 
+export type StoryBlokContextProviderType = React.FunctionComponent<{
+  storyBlok: StoryBlokResponseType
+}>
+
 export type StoryBlokResponseType = {
   perPage: number
   total: number

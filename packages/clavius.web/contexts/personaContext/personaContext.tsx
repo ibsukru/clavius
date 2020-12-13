@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react'
-import { PersonaContextType, personasType } from '.'
+import { PersonaContextProviderType, PersonaContextType, personasType } from '.'
 import getPersonaVariantKey from './getPersonaVariantKey'
 
 export const PersonaContext = createContext<PersonaContextType>({
@@ -9,9 +9,10 @@ export const PersonaContext = createContext<PersonaContextType>({
   key: 'DEFAULT',
 })
 
-export const PersonaContextProvider: React.FunctionComponent<{
-  personas: personasType
-}> = ({ children, ...rest }) => {
+export const PersonaContextProvider: PersonaContextProviderType = ({
+  children,
+  ...rest
+}) => {
   const [personas] = useState<personasType>(rest.personas)
 
   const { PERSONA_FAVORITE_SPORTS: favoriteSports } = personas

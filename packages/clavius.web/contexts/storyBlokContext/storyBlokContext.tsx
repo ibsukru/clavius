@@ -1,12 +1,19 @@
-import { createContext, useEffect, useState } from 'react'
-import { StoryBlokContextType, StoryBlokResponseType } from '.'
 import defaultsDeep from 'lodash.defaultsdeep'
+
+import { createContext, useEffect, useState } from 'react'
+
+import {
+  StoryBlokContextProviderType,
+  StoryBlokContextType,
+  StoryBlokResponseType,
+} from '.'
 
 export const StoryBlokContext = createContext<StoryBlokContextType>({})
 
-export const StoryBlokContextProvider: React.FunctionComponent<{
-  storyBlok: StoryBlokResponseType
-}> = ({ children, ...rest }) => {
+export const StoryBlokContextProvider: StoryBlokContextProviderType = ({
+  children,
+  ...rest
+}) => {
   const [storyBlok, setStoryBlock] = useState<StoryBlokResponseType>(
     rest.storyBlok,
   )
@@ -24,10 +31,6 @@ export const StoryBlokContextProvider: React.FunctionComponent<{
     sb.init()
 
     sb.on(['change', 'published'], event => {
-      console.log(
-        `🚀 ~ file: storyBlokContext.tsx ~ line 27 ~ useEffect ~ event`,
-        event,
-      )
       location.reload()
     })
 
