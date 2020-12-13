@@ -4,6 +4,6 @@ import mapFeatureToggles from './mapFeatureToggles'
 
 export type mapFeatureTogglesType = (
   storyBlokResponse?: StoryBlokResponseType,
-) => featureTogglesType | undefined
+) => featureTogglesType
 
 export default mapFeatureToggles

@@ -1,4 +1,5 @@
 import { EditableContentTpe, InjectStoryBlok } from '..'
+import { personaType } from '../../contexts/featureToggleContext'
 import WhatIsOn from './whatIsOn'
 import inject from './WhatIsOn.storyblok'
 
@@ -11,7 +12,8 @@ export type WhatIsOnStoryBlokType = InjectStoryBlok<
   WhatIsOnType,
   {
     title: string
-    events: EditableContentTpe[]
+    events?: EditableContentTpe[]
+    personas?: personaType[]
   }
 >
 

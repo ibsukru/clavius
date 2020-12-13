@@ -12,6 +12,16 @@ export type featureTogglesType = {
 
 export type togglesType = featureTogglesType | featureTogglesType[]
 
+export type personaType =
+  | 'DEFAULT'
+  | 'PERSONA_BASKETBALL_FAN'
+  | 'PERSONA_BOXING_FAN'
+  | 'PERSONA_CYCLING_FAN'
+
+export type personasType = {
+  PERSONA_FAVORITE_SPORTS: Array<sportsType>
+}
+
 export const isFeature: (
   toggles: featureTogglesType,
 ) => isFeatureType = features => (
@@ -33,14 +43,17 @@ export type storyBlokComponentType =
   | 'title'
 
 export const getPersonaVariantKey = (item: sportsType = 'DEFAULT') =>
-  item === 'DEFAULT' ? item : `PERSONA_${item}_FAN`
+  item === 'DEFAULT' ? item : (`PERSONA_${item}_FAN` as personaType)
 
 export type FeatureToggleContextType = {
   featureToggles: featureTogglesType
   isFeature: isFeatureType
   setFeatures: setFeaturesType
+  personas?: personasType
   persona: {
     favoriteSports: sportsType[]
+    favoriteSport: sportsType
+    key: personaType
   }
 }
 

@@ -1,9 +1,13 @@
 import { DynamicComponent } from '..'
-import { FeatureToggleContextProvider } from '../../contexts'
+import {
+  FeatureToggleContextProvider,
+  PersonaContextProvider,
+} from '../../contexts'
 import React from 'react'
 import { useStoryBlokContext } from '../../hooks'
 import { EditableComponent } from '..'
-import mapFeatureToggles from './mapFeatureToggles'
+import mapFeatureToggles from '../../server/shared/mapFeatureToggles'
+import mapPersonas from '../../server/shared/mapPersonas'
 
 const Page = () => {
   const { storyBlok } = useStoryBlokContext()
@@ -38,15 +42,20 @@ const Page = () => {
   const { content } = story
 
   return (
-    <FeatureToggleContextProvider featureToggles={mapFeatureToggles(storyBlok)}>
-      <EditableComponent content={content}>
-        <main>
-          {content.body?.map(blok => {
-            return <DynamicComponent blok={blok} key={blok._uid} />
-          })}
-        </main>
-      </EditableComponent>
-    </FeatureToggleContextProvider>
+    <EditableComponent content={content}>
+      <PersonaContextProvider personas={mapPersonas(storyBlok)}>
+        <FeatureToggleContextProvider
+          featureToggles={mapFeatureToggles(storyBlok)}
+          personas={mapPersonas(storyBlok)}
+        >
+          <main>
+            {content.body?.map(blok => {
+              return <DynamicComponent blok={blok} key={blok._uid} />
+            })}
+          </main>
+        </FeatureToggleContextProvider>
+      </PersonaContextProvider>
+    </EditableComponent>
   )
 }
 

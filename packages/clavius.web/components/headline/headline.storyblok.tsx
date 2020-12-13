@@ -12,12 +12,8 @@ const HeadlineStoryBlok: HeadlineStoryBlokType = Component => props => {
   const variants = normalizeVariants(experiments)
 
   const {
-    persona: { favoriteSports },
+    persona: { key: variantKey },
   } = useFeatureToggleContext()
-
-  const [favoriteSport] = favoriteSports
-
-  const variantKey = getPersonaVariantKey(favoriteSport)
 
   const pricingVariant = (() => {
     const pricingVariants = getVariants<HeadlinePricingPropType>(
@@ -54,7 +50,7 @@ const HeadlineStoryBlok: HeadlineStoryBlokType = Component => props => {
           explore: blok.explore,
           bg: imageVariant?.asset.filename,
           pricing: pricingVariant,
-          title: titleVariant.text,
+          title: titleVariant?.text,
           signin,
         }}
       />

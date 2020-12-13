@@ -1,4 +1,4 @@
-import { EditableContentTpe } from '../../components'
+import { EditableContentTpe, TableBlokType } from '../../components'
 import { StoryBlokContextProvider, StoryBlokContext } from './storyBlokContext'
 
 export type storyBlokContextType = {
@@ -21,6 +21,7 @@ export type StoryBlokResponseType = {
           tbody: { body: { value: string; _uid: string }[] }[]
           thead: { value: string }[]
         }
+        personas: TableBlokType
       }
     }
   }

@@ -2,29 +2,33 @@ import { createContext, useState } from 'react'
 import {
   FeatureToggleContextType,
   featureTogglesType,
+  getPersonaVariantKey,
   isFeature,
-  sportsType,
+  personasType,
 } from '.'
 
 export const FeatureToggleContext = createContext<FeatureToggleContextType>({
   isFeature: () => false,
   featureToggles: {} as featureTogglesType,
   setFeatures: () => {},
-  persona: { favoriteSports: ['DEFAULT'] },
+  persona: {
+    favoriteSports: ['DEFAULT'],
+    favoriteSport: 'DEFAULT',
+    key: 'DEFAULT',
+  },
 })
 
 export const FeatureToggleContextProvider: React.FunctionComponent<{
-  featureToggles?: featureTogglesType
-}> = ({ children, ...rest }) => {
+  featureToggles: featureTogglesType
+  personas: personasType
+}> = ({ children, personas, ...rest }) => {
   const [featureToggles, setFeatureToggles] = useState<featureTogglesType>(
     rest.featureToggles || {},
   )
 
-  const { PERSONA_FAVORITE_SPORTS } = featureToggles
+  const { PERSONA_FAVORITE_SPORTS: favoriteSports } = personas
 
-  const favoriteSports: sportsType[] = PERSONA_FAVORITE_SPORTS?.split(',').map(
-    item => item.toUpperCase() as sportsType,
-  ) || ['DEFAULT']
+  const [favoriteSport] = favoriteSports
 
   const value: FeatureToggleContextType = {
     featureToggles,
@@ -34,6 +38,8 @@ export const FeatureToggleContextProvider: React.FunctionComponent<{
     },
     persona: {
       favoriteSports,
+      favoriteSport,
+      key: getPersonaVariantKey(favoriteSport),
     },
   }
 
