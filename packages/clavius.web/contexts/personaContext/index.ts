@@ -17,9 +17,6 @@ export type storyBlokComponentType =
   | 'header'
   | 'title'
 
-export const getPersonaVariantKey = (item: sportsType = 'DEFAULT') =>
-  item === 'DEFAULT' ? item : (`PERSONA_${item}_FAN` as personaType)
-
 export type PersonaContextType = {
   personas: personasType
   favoriteSports: sportsType[]
