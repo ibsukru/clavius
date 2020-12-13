@@ -1,5 +1,5 @@
 import { EditableContentTpe, InjectStoryBlok } from '..'
-import { personaType } from '../../contexts/featureToggleContext'
+import { personaType } from '../../contexts/personaContext'
 import WhatIsOn from './whatIsOn'
 import inject from './WhatIsOn.storyblok'
 

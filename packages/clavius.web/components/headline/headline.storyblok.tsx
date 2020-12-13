@@ -1,7 +1,6 @@
 import { HeadlineStoryBlokType } from '.'
 import { EditableComponent, ImageStoryBlokType, TitleStoryBlokType } from '..'
-import { getPersonaVariantKey } from '../../contexts/featureToggleContext'
-import { useFeatureToggleContext } from '../../hooks'
+import { usePersonaContext } from '../../hooks'
 import { getVariants, normalizeVariants } from '../../server/shared'
 import { HeadlinePricingPropType } from './headlinePricing'
 
@@ -11,9 +10,7 @@ const HeadlineStoryBlok: HeadlineStoryBlokType = Component => props => {
   const { experiments, signin } = blok
   const variants = normalizeVariants(experiments)
 
-  const {
-    persona: { key: variantKey },
-  } = useFeatureToggleContext()
+  const { key: variantKey } = usePersonaContext()
 
   const pricingVariant = (() => {
     const pricingVariants = getVariants<HeadlinePricingPropType>(

@@ -1,4 +1,4 @@
-import { personasType } from '../../../contexts/featureToggleContext'
+import { personasType } from '../../../contexts/personaContext'
 import { StoryBlokResponseType } from '../../../contexts/storyBlokContext'
 import mapPersonas from './mapPersonas'
 
