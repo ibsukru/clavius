@@ -5,6 +5,8 @@ import Server from 'next/dist/next-server/server/next-server'
 import bodyParser from 'body-parser'
 import next from 'next'
 import storyBlokService from './storyblokService'
+import withContext from './withContext'
+import { StoryBlokResponseType } from '../contexts/storyBlokContext'
 
 const PORT = process.env.PORT || '1123'
 
@@ -20,26 +22,53 @@ const PORT = process.env.PORT || '1123'
     }),
   ])
 
-  server.get('/builder/:slug?', async (request, response, next) => {
-    const sbService = storyBlokService()
-    const slug = (request.params.slug as string) || 'home'
-    if (/\.[^/.]+$/.test(slug)) return next()
+  server.get(
+    ['/:locale/builder/:slug?', '/builder/:slug?'],
+    async (request, response, next) => {
+      const sbService = storyBlokService()
 
-    try {
-      request['storyblok'] = await sbService.get(
-        `cdn/stories/${slug || 'home'}`,
-        {},
-      )
-    } catch (error) {
-      response.status(500)
+      const context = withContext({ request })
 
-      return app.render(request, response, '_error', {
-        message: 'Something went wrong',
-      })
-    }
+      const { params } = request
 
-    return app.render(request, response, '/builder')
-  })
+      const storyBlokLocale = request.query['_storyblok_lang'] as
+        | string
+        | undefined
+
+      const originalLocale =
+        params.locale?.replace('undefined', '') ||
+        storyBlokLocale?.replace('default', '')
+
+      const originalSlug = params.slug
+
+      const slug = originalSlug || 'home'
+
+      const lift = (originalLocale || 'en-GL').split('-').filter(Boolean)
+      const language = lift[0] || 'en'
+      const country = lift[1] || 'GL'
+
+      const locale = `${language}-${country}`
+
+      let storyBlok: StoryBlokResponseType | undefined
+      try {
+        storyBlok = await sbService.get(`cdn/stories/${locale}/${slug}`, {})
+      } catch (error) {
+        response.status(500)
+        console.error(
+          `🚀 ~ file: index.ts ~ line 49 ~ server.get ~ error`,
+          error,
+        )
+
+        return app.render(request, response, '/_error', {
+          message: 'Something went wrong',
+        })
+      }
+
+      context.set({ storyBlok, locale })
+
+      return app.render(request, response, '/builder')
+    },
+  )
 
   server.get('*', async (request, response) => {
     return handle(request, response)

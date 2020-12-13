@@ -11,6 +11,7 @@ import DynamicComponent from './dynamicComponent'
 import Placeholder from './placeholder'
 import SbEditable, { SbEditableContent } from 'storyblok-react'
 import Error from './error'
+import { storyBlokComponentType } from '../contexts/featureToggleContext'
 
 export const EditableComponent = SbEditable
 
@@ -28,6 +29,20 @@ export type InjectStoryBlok<C, T> = (
 
 export type TableBlokType = {
   tbody: Array<{ body: Array<EditableContentTpe & { value: string }> }>
+}
+
+export type ImageStoryBlokType = {
+  title: string
+  asset: AssetBlokType
+  component: string
+}
+
+export type TitleStoryBlokKindType = 'h1' | 'h2' | 'h3'
+
+export type TitleStoryBlokType = {
+  text: string
+  kind: TitleStoryBlokKindType
+  component: string
 }
 
 export type AssetBlokType = { filename: string }

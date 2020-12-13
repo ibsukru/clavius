@@ -1,8 +1,49 @@
 import { HeadlineStoryBlokType } from '.'
-import { AssetBlokType, InjectStoryBlok, EditableComponent } from '..'
+import { EditableComponent, ImageStoryBlokType, TitleStoryBlokType } from '..'
+import { getPersonaVariantKey } from '../../contexts/featureToggleContext'
+import { useFeatureToggleContext } from '../../hooks'
+import { getVariants, normalizeVariants } from '../../server/shared'
+import { HeadlinePricingPropType } from './headlinePricing'
 
 const HeadlineStoryBlok: HeadlineStoryBlokType = Component => props => {
   const { blok } = props
+
+  const { experiments, signin } = blok
+  const variants = normalizeVariants(experiments)
+
+  const {
+    persona: { favoriteSports },
+  } = useFeatureToggleContext()
+
+  const [favoriteSport] = favoriteSports
+
+  const variantKey = getPersonaVariantKey(favoriteSport)
+
+  const pricingVariant = (() => {
+    const pricingVariants = getVariants<HeadlinePricingPropType>(
+      variants,
+      'headlinePricing',
+    )
+
+    return pricingVariants[variantKey]?.[0]
+  })()
+
+  const imageVariant = (() => {
+    const imageVariants = getVariants<ImageStoryBlokType>(variants, 'image')
+
+    const items = Boolean(imageVariants[variantKey]?.[0]?.asset)
+      ? imageVariants[variantKey]
+      : imageVariants['DEFAULT']
+
+    return items[0]
+  })()
+
+  const titleVariant = (() => {
+    const titleVariants = getVariants<TitleStoryBlokType>(variants, 'title')
+    const items = titleVariants[variantKey] || titleVariants['DEFAULT']
+
+    return items[0]
+  })()
 
   return (
     <EditableComponent content={blok}>
@@ -11,8 +52,10 @@ const HeadlineStoryBlok: HeadlineStoryBlokType = Component => props => {
           text: blok.text,
           logo: blok.logo.filename,
           explore: blok.explore,
-          bg: blok.bg.filename,
-          pricing: blok.pricing[0],
+          bg: imageVariant?.asset.filename,
+          pricing: pricingVariant,
+          title: titleVariant.text,
+          signin,
         }}
       />
     </EditableComponent>

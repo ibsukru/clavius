@@ -23,7 +23,13 @@ export const StoryBlokContextProvider: React.FunctionComponent<{
 
     sb.init()
 
-    sb.on(['change', 'published'], () => location.reload())
+    sb.on(['change', 'published'], event => {
+      console.log(
+        `🚀 ~ file: storyBlokContext.tsx ~ line 27 ~ useEffect ~ event`,
+        event,
+      )
+      location.reload()
+    })
 
     sb.on('input', event => {
       const eventStory = event?.story

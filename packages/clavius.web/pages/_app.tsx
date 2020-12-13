@@ -1,26 +1,32 @@
 import React, { Fragment } from 'react'
 import App, { AppContext } from 'next/app'
+import { IncomingMessage } from 'http'
 
 import { resetStyles, htmlStyles } from '../styles'
 import {
   StoryBlokContextProvider,
-  StoryBlokResponseType,
-} from '../contexts/storyBlokContext'
+  I18nContextContextProvider,
+} from '../contexts'
+import { StoryBlokResponseType } from '../contexts/storyBlokContext'
+import withContext from '../server/withContext'
 
-class MyApp extends App<{ storyBlok: StoryBlokResponseType }> {
+class MyApp extends App<{ storyBlok: StoryBlokResponseType; locale: string }> {
   static async getInitialProps({ Component, ctx }: AppContext) {
-    const request = ctx.req
+    const request = ctx.req as IncomingMessage
+
+    const { storyBlok, locale } = withContext({ request }).get()
 
     return {
       pageProps: Component.getInitialProps
         ? await Component.getInitialProps(ctx)
         : {},
-      storyBlok: request?.['storyblok'],
+      storyBlok,
+      locale,
     }
   }
 
   render() {
-    const { Component, pageProps, storyBlok } = this.props
+    const { Component, pageProps, storyBlok, locale } = this.props
 
     return (
       <Fragment>
@@ -30,9 +36,11 @@ class MyApp extends App<{ storyBlok: StoryBlokResponseType }> {
         <style jsx global>
           {htmlStyles}
         </style>
-        <StoryBlokContextProvider storyBlok={storyBlok}>
-          <Component {...pageProps} />
-        </StoryBlokContextProvider>
+        <I18nContextContextProvider locale={locale}>
+          <StoryBlokContextProvider storyBlok={storyBlok}>
+            <Component {...pageProps} />
+          </StoryBlokContextProvider>
+        </I18nContextContextProvider>
       </Fragment>
     )
   }

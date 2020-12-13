@@ -1,32 +1,38 @@
 import HeadlinePricing, { HeadlinePricingPropType } from './headlinePricing'
 import inject from './headline.storyblok'
 import Headline from './headline'
-import { AssetBlokType, InjectStoryBlok } from '..'
+import {
+  AssetBlokType,
+  ImageStoryBlokType,
+  InjectStoryBlok,
+  TableBlokType,
+  TitleStoryBlokType,
+} from '..'
 
 export type HeadlineStoryBlokType = InjectStoryBlok<
   HeadlineType,
   {
-    text: string
+    signin: string
     logo: AssetBlokType
     explore: string
-    bg: AssetBlokType
-    pricing: [
-      {
-        header: string
-        footer: string
-        features: string
-        signup: string
-      },
-    ]
+    experiments: Array<{
+      key: string
+      variant: Array<
+        ImageStoryBlokType | HeadlinePricingPropType | TitleStoryBlokType
+      >
+      component: string
+      config: TableBlokType
+    }>
   }
 >
 
 export type HeadlineType = React.FunctionComponent<{
-  text: string
+  signin: string
   logo: string
   explore: string
-  bg: string
+  bg?: string
   pricing: HeadlinePricingPropType
+  title: string
 }>
 
 export default inject(Headline)

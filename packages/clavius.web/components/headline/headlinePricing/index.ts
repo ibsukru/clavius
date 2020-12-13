@@ -5,6 +5,7 @@ export type HeadlinePricingPropType = {
   footer: string
   features: string
   signup: string
+  component: string
 }
 
 export type HeadlinePricingType = React.FunctionComponent<HeadlinePricingPropType>

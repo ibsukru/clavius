@@ -1,7 +1,9 @@
+import React from 'react'
 import { HeadlinePricing, HeadlineType } from '.'
+import Markdown from 'react-markdown'
 
 const Headline: HeadlineType = props => {
-  const { text, logo, explore, bg, pricing } = props
+  const { signin, logo, explore, bg, pricing, title } = props
 
   return (
     <div className="headline">
@@ -73,6 +75,11 @@ const Headline: HeadlineType = props => {
         .headline-nav-explore:hover {
           background-color: var(--shade-7);
         }
+
+        .headline-signin {
+          margin-top: 20px;
+          font-size: 0.875rem;
+        }
       `}</style>
       <div className="headline-content">
         <nav className="headline-nav">
@@ -84,9 +91,12 @@ const Headline: HeadlineType = props => {
           </a>
         </nav>
         <aside className="headline-aside">
-          <h1 className="headline-aside-title">{text}</h1>
+          <h1 className="headline-aside-title">{title}</h1>
           <div className="headline-aside-pricing">
             <HeadlinePricing {...{ ...pricing }} />
+          </div>
+          <div className="headline-signin">
+            <Markdown source={signin} />
           </div>
         </aside>
       </div>
