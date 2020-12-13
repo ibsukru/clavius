@@ -9,11 +9,12 @@ const GetStarted: GetStartedType = props => {
     <section className="getStarted">
       <style jsx>{`
         .getStarted {
-          padding: 10px 0;
+          padding: 50px 0;
           margin: 0 auto;
           color: var(--background);
           background-color: var(--shade-7);
           text-align: center;
+          border-top: 2px dashed var(--shade-6);
         }
 
         .getStarted-header {

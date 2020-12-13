@@ -5,21 +5,21 @@ const WhatIsIncluded: WhatIsIncludedType = props => {
   const { title, subtitle, features, signup } = props
 
   return (
-    // <EditableComponent content={blok}>
     <section className="whatIsIncluded">
       <style jsx>{`
         .whatIsIncluded {
-          padding: 30px 0;
+          padding: 50px 0;
           margin: 0 auto;
           color: var(--background);
           background-color: var(--shade-7);
+          border-top: 2px dashed var(--shade-6);
         }
 
         .whatIsIncluded-header {
           text-align: center;
           font-size: 2rem;
           font-weight: bold;
-          margin: 20px 0 30px 0;
+          margin-bottom: 30px;
         }
 
         .whatIsIncluded-features {
@@ -75,7 +75,6 @@ const WhatIsIncluded: WhatIsIncludedType = props => {
         </a>
       </div>
     </section>
-    // </EditableComponent>
   )
 }
 
