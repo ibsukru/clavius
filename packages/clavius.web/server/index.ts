@@ -66,7 +66,9 @@ const PORT = process.env.PORT || '1123'
 
       context.set({ storyBlok, locale })
 
-      return app.render(request, response, '/builder')
+      return app.render(request, response, '/builder', {
+        ...(request.query as { [key: string]: string }),
+      })
     },
   )
 
