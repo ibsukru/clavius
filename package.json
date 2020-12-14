@@ -63,6 +63,7 @@
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "ts-jest": "^26.4.4",
+    "dotenv": "^8.2.0",
     "typescript": "^4.1.2"
   },
   "husky": {
@@ -78,7 +79,6 @@
     ]
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
     "lodash.defaultsdeep": "^4.6.1",
     "nodemon": "^2.0.6",
     "lerna": "^3.22.1"
