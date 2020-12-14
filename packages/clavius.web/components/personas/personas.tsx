@@ -1,5 +1,6 @@
 import { usePersonaContext } from '../../hooks'
 import classNames from 'classnames'
+import Select from '../common/select'
 
 const Personas: React.FunctionComponent<{ title?: string; size?: string }> = ({
   title,
@@ -35,6 +36,20 @@ const Personas: React.FunctionComponent<{ title?: string; size?: string }> = ({
         .personas-hint:not(:empty) {
           margin-right: 20px;
         }
+        select {
+          appearance: none;
+          text-rendering: auto;
+          width: 100%;
+          border-radius: var(--geist-radius);
+          border: none;
+          background: none;
+          padding: 0;
+          padding-right: 0px;
+          outline: none;
+
+          color: var(--secondary);
+          font-size: 0.875rem;
+        }
       `}</style>
 
       <span className="personas-hint">{title}</span>
@@ -58,6 +73,30 @@ const Personas: React.FunctionComponent<{ title?: string; size?: string }> = ({
           </a>
         )
       })}
+      <span className="personas-select">
+        <Select
+          options={['default', 'boxing', 'basketball', 'cycling'].map(item => {
+            const active = favoriteSport.toUpperCase() === item.toUpperCase()
+            const value = item.toUpperCase()
+            return {
+              text: icons[item],
+              value,
+              selected: active,
+            }
+          })}
+        />
+      </span>
+
+      <span className="personas-locale">
+        <Select
+          options={['nl-NL', 'en-NL'].map(locale => {
+            return {
+              text: locale,
+              value: locale,
+            }
+          })}
+        />
+      </span>
     </div>
   )
 }

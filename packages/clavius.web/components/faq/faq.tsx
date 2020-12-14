@@ -17,7 +17,10 @@ const Faq: FaqType = props => {
         .faq-title {
           cursor: pointer;
           font-weight: bold;
-          margin: 5px 0;
+          margin: 8px 0;
+          border-bottom: 1px dotted var(--shade-6);
+          padding: 5px 0;
+          display: flex;
         }
 
         .faq-description {
@@ -29,18 +32,26 @@ const Faq: FaqType = props => {
         .faq-description.active {
           display: block;
         }
+
+        .faq-title-text {
+          flex: 1;
+        }
       `}</style>
       <dl className="faq">
         {accordion.panels.map((panel, i) => {
+          const active = i === index
+
           return (
             <Fragment key={panel._uid}>
               <dt
                 onClick={() => {
-                  setIndex(i === index ? undefined : i)
+                  setIndex(active ? undefined : i)
                 }}
                 className="faq-title"
               >
-                {panel.title}
+                <div className="faq-title-text">{panel.title}</div>
+
+                <span className="faq-title-expand">{active ? '👈' : '👇'}</span>
               </dt>
               <dd className={`faq-description ${index === i ? 'active' : ''}`}>
                 {panel.content}

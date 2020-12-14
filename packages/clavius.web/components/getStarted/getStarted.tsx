@@ -36,7 +36,6 @@ const GetStarted: GetStartedType = props => {
 
         .getStarted-steps {
           margin: 0 auto;
-          padding: 10px;
           display: flex;
           gap: 20px;
           flex-direction: column;

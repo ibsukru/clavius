@@ -1,4 +1,5 @@
 import CheckIcon from './checkIcon'
+import ScrollIcon from './scrollIcon'
 
 export type IconDirectionType = 'up' | 'right' | 'down' | 'left'
 export type IconAlignType = 'left' | 'right' | 'justify'
@@ -14,4 +15,4 @@ export type IconType = React.FunctionComponent<{
   align?: IconAlignType
 }>
 
-export { CheckIcon }
+export { CheckIcon, ScrollIcon }
