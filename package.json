@@ -31,7 +31,9 @@
     "test": "lerna run test -- -u",
     "mutate": "mutate"
   },
-  "devDependencies": {
+  "dependencies": {
+    "lodash.defaultsdeep": "^4.6.1",
+    "lerna": "^3.22.1",
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/plugin-syntax-jsx": "^7.12.1",
@@ -78,9 +80,5 @@
       "yarn lint:fix",
       "git add"
     ]
-  },
-  "dependencies": {
-    "lodash.defaultsdeep": "^4.6.1",
-    "lerna": "^3.22.1"
   }
 }
