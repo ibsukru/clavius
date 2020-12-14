@@ -7,7 +7,7 @@ const HowToWatchStoryBlok: HowToWatchStoryBlokType = Component => props => {
   const { platforms, title } = blok
   const { tbody } = platforms
 
-  const list = tbody.reduce<
+  const list = tbody?.reduce<
     | Array<{
         type: string
         title: string

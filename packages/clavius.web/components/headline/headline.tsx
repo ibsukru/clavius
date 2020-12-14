@@ -1,9 +1,19 @@
 import React from 'react'
 import { HeadlinePricing, HeadlineType } from '.'
 import Markdown from 'react-markdown'
+import classNames from 'classnames'
+import { usePersonaContext } from '../../hooks'
 
 const Headline: HeadlineType = props => {
   const { signin, logo, explore, bg, pricing, title } = props
+
+  const { favoriteSport } = usePersonaContext()
+  const icons = {
+    basketball: '🏀',
+    cycling: '🚴‍♂️',
+    boxing: '🥊',
+    default: '🍺',
+  }
 
   return (
     <div className="headline">
@@ -80,12 +90,47 @@ const Headline: HeadlineType = props => {
           margin-top: 20px;
           font-size: 0.875rem;
         }
+
+        .headline-nav-persona {
+          margin: 0 5px;
+          opacity: 0.7;
+          font-size: 1.2rem;
+        }
+        .headline-nav-persona:hover {
+          opacity: 1;
+        }
+        .headline-nav-persona.active {
+          opacity: 1;
+          font-size: 1.6rem;
+        }
       `}</style>
       <div className="headline-content">
         <nav className="headline-nav">
           <a href="/">
             <img src={logo} width="42px" alt="logo" />
           </a>
+          <div className="headline-nav-personas">
+            {['basketball', 'cycling', 'boxing', 'default'].map(item => {
+              const active = favoriteSport.toUpperCase() === item.toUpperCase()
+
+              return (
+                <a
+                  key={item}
+                  title={`PERSONA_${item.toUpperCase()}_FAN`.replace(
+                    `PERSONA_DEFAULT_FAN`,
+                    'DEFAULT',
+                  )}
+                  className={classNames('headline-nav-persona', {
+                    active,
+                  })}
+                  href={`/builder?PERSONA_FAVORITE_SPORTS=${item}`}
+                >
+                  {icons[item]}
+                </a>
+              )
+            })}
+          </div>
+
           <a className="headline-nav-explore" href="/">
             {explore}
           </a>
