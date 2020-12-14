@@ -25,7 +25,7 @@
     "build": "yarn clean:dist && lerna run build",
     "build:dev": "yarn build",
     "compile": "tsc --noEmit",
-    "start": "lerna run build && yarn cwd:web start",
+    "start": "yarn cwd:web start",
     "prestart": "lerna run build",
     "stryker": "stryker run",
     "test": "lerna run test -- -u",
