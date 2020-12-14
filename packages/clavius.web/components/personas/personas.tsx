@@ -6,6 +6,7 @@ const Personas: React.FunctionComponent<{ title?: string; size?: string }> = ({
   size,
 }) => {
   const { favoriteSport } = usePersonaContext()
+
   const icons = {
     basketball: '🏀',
     cycling: '🚴‍♂️',
