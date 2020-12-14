@@ -83,7 +83,7 @@ const PORT = process.env.PORT || '1123'
   express(),
   next({
     dev: process.env.NODE_ENV !== 'production',
-    customServer: true,
-    conf: baseConfig,
+    // customServer: true,
+    // conf: baseConfig,
   }),
 )
