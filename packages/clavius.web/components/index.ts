@@ -10,6 +10,7 @@ import { Spinner } from './common'
 import DynamicComponent from './dynamicComponent'
 import Placeholder from './placeholder'
 import Error from './error'
+import Personas from './personas'
 
 export * from './index.types'
 
@@ -26,4 +27,5 @@ export {
   Faq as FAQ,
   Footer,
   Error,
+  Personas,
 }

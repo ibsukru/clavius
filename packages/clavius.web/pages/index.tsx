@@ -1,17 +1,22 @@
 import React from 'react'
+import { Personas } from '../components'
 
 const Index = () => {
   return (
-    <a href="/builder">
+    <div className="personas">
       <style jsx>{`
-        a {
-          display: block;
-          margin: 300px 50px;
-          text-align: center;
+        .personas {
+          margin-top: 20%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          font-size: 3rem;
         }
       `}</style>
-      GO TO BUILDER 👷
-    </a>
+      <Personas size="5rem" />
+    </div>
   )
 }
 
