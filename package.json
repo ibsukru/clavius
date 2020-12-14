@@ -26,7 +26,6 @@
     "build:dev": "yarn build",
     "compile": "tsc --noEmit",
     "start": "yarn cwd:web start",
-    "prestart": "lerna run build",
     "stryker": "stryker run",
     "test": "lerna run test -- -u",
     "mutate": "mutate"
