@@ -22,7 +22,7 @@
     "cwd:web": "yarn cwd packages/clavius.web",
     "dev": "yarn cwd:web dev",
     "clean:dist": "rm -rf packages/**/dist*",
-    "build": "yarn clean:dist && lerna run build",
+    "build": "lerna run build",
     "build:dev": "yarn build",
     "compile": "tsc --noEmit",
     "start": "yarn cwd:web start",
