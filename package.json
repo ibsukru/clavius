@@ -22,7 +22,7 @@
     "cwd:web": "yarn cwd packages/clavius.web",
     "dev": "yarn cwd:web dev",
     "clean:dist": "rm -rf packages/**/dist*",
-    "build": "lerna run build",
+    "build": "yarn clean:dist && lerna run build",
     "build:dev": "yarn build",
     "compile": "tsc --noEmit",
     "start": "yarn cwd:web start",
@@ -31,7 +31,7 @@
     "test": "lerna run test -- -u",
     "mutate": "mutate"
   },
-  "dependencies": {
+  "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/plugin-syntax-jsx": "^7.12.1",
@@ -60,14 +60,11 @@
     "eslint-plugin-react": "^7.21.5",
     "husky": "^4.3.5",
     "jest": "^26.6.3",
+    "lerna": "^3.22.1",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "ts-jest": "^26.4.4",
-    "typescript": "^4.1.2",
-    "dotenv": "^8.2.0",
-    "lodash.defaultsdeep": "^4.6.1",
-    "nodemon": "^2.0.6",
-    "lerna": "^3.22.1"
+    "typescript": "^4.1.2"
   },
   "husky": {
     "hooks": {
@@ -80,5 +77,10 @@
       "yarn lint:fix",
       "git add"
     ]
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "lodash.defaultsdeep": "^4.6.1",
+    "nodemon": "^2.0.6"
   }
 }
