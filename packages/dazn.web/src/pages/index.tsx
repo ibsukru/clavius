@@ -17,13 +17,14 @@ export async function getStaticProps({ locale }) {
   try {
     storyBlok = await storyBlokService().get(`cdn/stories/${locale}/home`, {})
   } catch (error) {
-    console.error(`🚀 ~ sssss: index.ts ~ line 49 ~ server.get ~ error`, error)
-  } finally {
-    return {
-      props: {
-        storyBlok,
-      },
-    }
+    console.error(`🚀 ~ error`, error)
+    throw error
+  }
+
+  return {
+    props: {
+      storyBlok,
+    },
   }
 }
 

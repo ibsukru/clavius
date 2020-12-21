@@ -18,9 +18,9 @@ export async function getStaticProps({ locale, ...rest }) {
   try {
     storyBlok = await sbService.get(`cdn/stories/${locale}/home`, {})
   } catch (error) {
-    console.error(`🚀 ~ sssss: index.ts ~ line 49 ~ server.get ~ error`, error)
+    console.error(`🚀 ~ error`, error)
 
-    return {}
+    throw error
   }
 
   return {

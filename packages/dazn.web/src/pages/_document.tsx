@@ -4,10 +4,8 @@ import flushToReact from 'styled-jsx/server'
 
 export default class MyDocument extends Document {
   render() {
-    const theme = Cookies.get('theme')
-
     return (
-      <Html lang="en" className={theme || 'dark'}>
+      <Html lang="en" className={'dark'}>
         <Head>
           <link
             rel="shortcut icon"
