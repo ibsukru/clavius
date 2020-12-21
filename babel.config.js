@@ -8,7 +8,7 @@ const alias = libs.reduce((acc, lib) => {
     [`^${lib}/(.+)`]: ([, name]) => {
       const src = name.replace(/^src/g, 'dist')
 
-      return `${lib}/dist/${src.replace(/^dist/g, '')}`
+      return `${lib}/dist/${src.replace(/^dist/g, '').replace('//', '/')}`
     },
   }
 }, {})
