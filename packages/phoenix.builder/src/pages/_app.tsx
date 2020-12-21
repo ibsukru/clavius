@@ -15,7 +15,9 @@ class MyApp extends App<{ storyBlok: StoryBlokResponseType; locale: string }> {
   static async getInitialProps({ Component, ctx }: AppContext) {
     const request = ctx.req as IncomingMessage
 
-    const { storyBlok, locale } = withContext({ request }).get()
+    const context = withContext({ request })
+    const storyBlok = context.getStoryBlok('help')
+    const locale = context.getLocale()
 
     return {
       pageProps: Component.getInitialProps
