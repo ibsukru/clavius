@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { storyBlokService } from 'apollo.lib'
+import { storyBlokService } from 'clavius.lib'
 import { StoryBlokResponseType } from 'apollo.web/src/contexts/storyBlokContext'
 import { Page } from 'apollo.web/src/components'
 
