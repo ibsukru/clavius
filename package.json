@@ -19,7 +19,7 @@
     "lint": "eslint 'packages/**/*.{ts,tsx,js,jsx}'",
     "lint:fix": "yarn lint --fix",
     "cwd": "yarn --cwd",
-    "cwd:web": "yarn cwd packages/clavius.web",
+    "cwd:web": "yarn cwd packages/apollo.web",
     "dev": "yarn cwd:web dev",
     "clean:dist": "rm -rf packages/**/dist*",
     "build": "yarn clean:dist && lerna run build",

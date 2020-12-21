@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { storyBlokService } from 'clavius.lib'
-import { StoryBlokResponseType } from 'clavius.web/src/contexts/storyBlokContext'
-import { Page } from 'clavius.web/src/components'
+import { storyBlokService } from 'apollo.lib'
+import { StoryBlokResponseType } from 'apollo.web/src/contexts/storyBlokContext'
+import { Page } from 'apollo.web/src/components'
 
 const Index: React.FunctionComponent<{
   storyBlok: StoryBlokResponseType

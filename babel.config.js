@@ -1,4 +1,4 @@
-const libs = ['clavius.lib', 'clavius.web', 'dazn.web']
+const libs = ['apollo.lib', 'apollo.web', 'dazn.web']
 
 const { NODE_ENV } = process.env
 
