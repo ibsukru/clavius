@@ -1,0 +1,32 @@
+name: Push
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    name: CD
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use Node.js ${{matrix.node-version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+      - name: Install
+        run: yarn install
+      - name: Lint
+        run: yarn lint
+      - name: Test
+        run: yarn test
+      - name: Deploy dazn.web
+        uses: vitalyliber/dokku-github-action@v5.0
+        env:
+          PRIVATE_KEY: ${{secrets.DO_SSH_PRIVATE_KEY}}
+          HOST: 165.232.68.222
+          PROJECT: clavius
+          FORCE_DEPLOY: true
