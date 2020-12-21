@@ -1,18 +1,19 @@
 const { NODE_ENV } = process.env
 
-const repos = ['apollo', 'clavius', 'phoenix', 'mars', 'solaire']
+const libs = [
+  'clavius.lib',
+  'clavius.www',
+  'apollo.lib',
+  'apollo.builder',
+  'phoenix.lib',
+  'phoenix.builder',
+  'solaire.lib',
+  'solaire.builder',
+  'mars.lib',
+  'mars.builder',
+]
 
-const libs = repos.reduce((acc, current) => {
-  return acc.concat(`${current}.lib`)
-}, [])
-
-const builders = repos
-  .filter(repo => repo !== 'clavius')
-  .reduce((acc, current) => {
-    return acc.concat(`${current}.builder`)
-  }, [])
-
-const alias = [...libs, ...builders, 'clavius.www'].reduce((acc, lib) => {
+const alias = libs.reduce((acc, lib) => {
   return {
     ...acc,
     [`^${lib}/(.+)`]: ([, name]) => {
