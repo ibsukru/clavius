@@ -1,18 +1,9 @@
-const libs = [
-  'apollo.lib',
-  'apollo.web',
-  'clavius.lib',
-  'clavius.web',
-  'phoenix.web',
-  'phoenix.lib',
-]
-
-// const libs = ['apollo', 'clavius', 'phoenix', 'mars', 'solaire'].reduce(
-//   (acc, current) => {
-//     return acc.concat(`${current}.web`).concat(`${current}.lib`)
-//   },
-//   [],
-// )
+const libs = ['apollo', 'clavius', 'phoenix', 'mars', 'solaire'].reduce(
+  (acc, current) => {
+    return acc.concat(`${current}.web`).concat(`${current}.lib`)
+  },
+  [],
+)
 
 const { NODE_ENV } = process.env
 
@@ -22,7 +13,7 @@ const alias = libs.reduce((acc, lib) => {
     [`^${lib}/(.+)`]: ([, name]) => {
       const src = name.replace(/^src/g, 'dist')
 
-      return `${lib}/dist/${src.replace(/^dist/g, '').replace('//', '/')}`
+      return `${lib}/dist/${src.replace(/^dist/g, '')}`
     },
   }
 }, {})
