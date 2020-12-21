@@ -1,4 +1,18 @@
-const libs = ['clavius.lib', 'apollo.web', 'clavius.web']
+const libs = [
+  'apollo.lib',
+  'apollo.web',
+  'clavius.lib',
+  'clavius.web',
+  'phoenix.web',
+  'phoenix.lib',
+]
+
+// const libs = ['apollo', 'clavius', 'phoenix', 'mars', 'solaire'].reduce(
+//   (acc, current) => {
+//     return acc.concat(`${current}.web`).concat(`${current}.lib`)
+//   },
+//   [],
+// )
 
 const { NODE_ENV } = process.env
 

@@ -1,29 +1,12 @@
-import { FooterType } from '.'
+import { FooterStoryBlokType } from '.'
+import { EditableComponent } from 'clavius.lib/src/components'
 
-const Footer: FooterType = props => {
-  const { links } = props
+const FooterStoryBlok: FooterStoryBlokType = Component => ({ blok }) => {
   return (
-    <footer>
-      <style jsx>{`
-        footer {
-          padding: 20px;
-        }
-        nav {
-          display: flex;
-          gap: 20px;
-        }
-      `}</style>
-      <nav>
-        {links.map(link => {
-          return (
-            <a key={link._uid} href={`/${link.key}`}>
-              {link.value}
-            </a>
-          )
-        })}
-      </nav>
-    </footer>
+    <EditableComponent content={blok}>
+      <Component {...{ ...blok }} />
+    </EditableComponent>
   )
 }
 
-export default Footer
+export default FooterStoryBlok

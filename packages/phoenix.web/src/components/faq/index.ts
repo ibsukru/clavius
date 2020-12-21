@@ -1,19 +1,10 @@
-import { InjectStoryBlok } from '..'
-import Faq from './faq'
-import inject from './faq.storyblok'
+import inject from './faq'
 
-export type FaqType = React.FunctionComponent<{
-  questions: Array<{
-    panels: Array<{
-      title: string
-      content: string
-      _uid: string
-    }>
-  }>
-}>
+import { InjectStoryBlok } from '..'
+import { Faq } from 'phoenix.lib/src/components'
 
 export type FaqStoryBlokType = InjectStoryBlok<
-  FaqType,
+  typeof Faq,
   {
     questions: Array<{
       panels: Array<{
