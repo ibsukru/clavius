@@ -6,7 +6,6 @@ import GetStarted from './getStarted'
 import HowToWatch from './howToWatch'
 import Faq from './faq'
 import Footer from './footer'
-import { Spinner } from './common'
 import DynamicComponent from './dynamicComponent'
 import Placeholder from './placeholder'
 import Error from './error'
@@ -18,7 +17,6 @@ export {
   Rails,
   DynamicComponent,
   Headline,
-  Spinner,
   Placeholder,
   Page,
   WhatIsOn,
