@@ -1,13 +1,18 @@
-const libs = ['apollo', 'clavius', 'phoenix', 'mars', 'solaire'].reduce(
-  (acc, current) => {
-    return acc.concat(`${current}.web`).concat(`${current}.lib`)
-  },
-  [],
-)
+const repos = ['apollo', 'clavius', 'phoenix', 'mars', 'solaire']
+
+const libs = repos.reduce((acc, current) => {
+  return acc.concat(`${current}.lib`)
+}, [])
+
+const builders = repos
+  .filter(repo => repo !== 'clavius')
+  .reduce((acc, current) => {
+    return acc.concat(`${current}.builder`)
+  }, [])
 
 const { NODE_ENV } = process.env
 
-const alias = libs.reduce((acc, lib) => {
+const alias = [...libs, ...builders, 'clavius.www'].reduce((acc, lib) => {
   return {
     ...acc,
     [`^${lib}/(.+)`]: ([, name]) => {

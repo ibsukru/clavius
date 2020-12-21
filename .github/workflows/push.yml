@@ -23,7 +23,7 @@ jobs:
         run: yarn lint
       - name: Test
         run: yarn test
-      - name: Deploy clavius.web
+      - name: Deploy clavius.www
         uses: vitalyliber/dokku-github-action@v5.0
         env:
           PRIVATE_KEY: ${{secrets.DO_SSH_PRIVATE_KEY}}
