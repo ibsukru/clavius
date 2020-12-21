@@ -8,7 +8,7 @@
     "dev": "next",
     "build": "yarn build:next",
     "build:next": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "prestart": "yarn build",
     "test": "jest"
   },
