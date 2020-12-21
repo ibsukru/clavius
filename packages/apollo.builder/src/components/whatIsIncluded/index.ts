@@ -1,13 +1,8 @@
 import { InjectStoryBlok } from 'clavius.lib/src/components'
-import WhatIsIncluded from './whatIsIncluded'
-import inject from './whatIsIncluded.storyblok'
-
-export type WhatIsIncludedType = React.FunctionComponent<{
-  title: string
-  subtitle: string
-  features: string
-  signup: string
-}>
+import WhatIsIncluded, {
+  WhatIsIncludedType,
+} from 'apollo.lib/src/components/whatIsIncluded'
+import inject from './whatIsIncluded'
 
 export type WhatIsIncludedStoryBlokType = InjectStoryBlok<
   WhatIsIncludedType,
