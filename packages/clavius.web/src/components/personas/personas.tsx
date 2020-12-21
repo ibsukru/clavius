@@ -14,6 +14,8 @@ const Personas: React.FunctionComponent<{ title?: string; size?: string }> = ({
     default: '🍺',
   }
 
+  if (!favoriteSport) return null
+
   return (
     <div className="personas">
       <style jsx>{`

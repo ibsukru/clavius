@@ -1,15 +1,14 @@
 {
-  "name": "clavius.web",
+  "name": "dazn.web",
   "version": "1.0.0",
   "main": "index.js",
   "author": "ibsukru",
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "nodemon dist/server",
-    "build": "echo 'building' & yarn build:server & yarn build:next",
+    "dev": "next",
+    "build": "yarn build:next",
     "build:next": "next build",
-    "build:server": "yarn run babel src -d --out-dir dist --extensions '.ts,.tsx'",
-    "start": "node dist/server",
+    "start": "next start",
     "prestart": "yarn build",
     "test": "jest"
   },
@@ -17,6 +16,7 @@
     "axios": "^0.20.0",
     "classnames": "^2.2.6",
     "clavius.lib": "1.0.0",
+    "clavius.web": "1.0.0",
     "express": "^4.17.1",
     "js-cookie": "^2.2.1",
     "next": "^10.0.3",

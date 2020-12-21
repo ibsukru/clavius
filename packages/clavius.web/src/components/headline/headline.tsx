@@ -111,7 +111,6 @@ const Headline: HeadlineType = props => {
           <a href="/">
             <img src={logo} width="42px" alt="logo" />
           </a>
-          <Personas />
           <a className="headline-nav-explore" href="/">
             {explore}
           </a>

@@ -8,6 +8,10 @@ import {
   StoryBlokResponseType,
 } from '.'
 
+import { PersonaContextProvider, FeatureToggleContextProvider } from '..'
+import mapFeatureToggles from '../../server/shared/mapFeatureToggles'
+import mapPersonas from '../../server/shared/mapPersonas'
+
 export const StoryBlokContext = createContext<StoryBlokContextType>({})
 
 export const StoryBlokContextProvider: StoryBlokContextProviderType = ({
@@ -58,7 +62,13 @@ export const StoryBlokContextProvider: StoryBlokContextProviderType = ({
 
   return (
     <StoryBlokContext.Provider value={value}>
-      {children}
+      <PersonaContextProvider personas={mapPersonas(storyBlok)}>
+        <FeatureToggleContextProvider
+          featureToggles={mapFeatureToggles(storyBlok)}
+        >
+          {children}
+        </FeatureToggleContextProvider>
+      </PersonaContextProvider>
     </StoryBlokContext.Provider>
   )
 }

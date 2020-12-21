@@ -27,6 +27,8 @@ export type StoryBlokResponseType = {
         }
         personas: TableBlokType
       }
+      full_slug: String
+      slug: string
     }
   }
 }

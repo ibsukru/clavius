@@ -1,7 +1,7 @@
 import React from 'react'
 import { Personas } from '../components'
 
-const Index = () => {
+const Index = props => {
   return (
     <div className="personas">
       <style jsx>{`
@@ -16,6 +16,7 @@ const Index = () => {
         }
       `}</style>
       <Personas size="5rem" />
+      {/* <a href="/builder">BUILDER 🏗</a> */}
     </div>
   )
 }
