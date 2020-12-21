@@ -28,7 +28,8 @@
     "start": "yarn cwd:web start",
     "stryker": "stryker run",
     "test": "lerna run test -- -u",
-    "mutate": "mutate"
+    "mutate": "mutate",
+    "prestart": "yarn build"
   },
   "dependencies": {
     "lodash.defaultsdeep": "^4.6.1",
