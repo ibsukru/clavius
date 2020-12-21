@@ -1,3 +1,5 @@
+const { NODE_ENV } = process.env
+
 const repos = ['apollo', 'clavius', 'phoenix', 'mars', 'solaire']
 
 const libs = repos.reduce((acc, current) => {
@@ -9,8 +11,6 @@ const builders = repos
   .reduce((acc, current) => {
     return acc.concat(`${current}.builder`)
   }, [])
-
-const { NODE_ENV } = process.env
 
 const alias = [...libs, ...builders, 'clavius.www'].reduce((acc, lib) => {
   return {
