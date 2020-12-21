@@ -6,10 +6,10 @@ import { resetStyles, htmlStyles } from '../styles'
 import {
   StoryBlokContextProvider,
   I18nContextContextProvider,
-} from 'clavius.web/src/contexts'
+} from 'clavius.lib/src/contexts'
 
-import { StoryBlokResponseType } from 'clavius.web/src/contexts/storyBlokContext'
-import withContext from 'clavius.web/src/withContext'
+import { StoryBlokResponseType } from 'clavius.lib/src/contexts/storyBlokContext'
+import withContext from 'clavius.lib/src/withContext'
 
 class MyApp extends App<{ storyBlok: StoryBlokResponseType; locale: string }> {
   static async getInitialProps({ Component, ctx }: AppContext) {

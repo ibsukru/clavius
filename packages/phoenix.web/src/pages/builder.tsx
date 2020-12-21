@@ -1,5 +1,5 @@
-import { useStoryBlokContext } from 'clavius.web/src/hooks'
-import { StoryBlokContextProvider } from 'clavius.web/src/contexts'
+import { useStoryBlokContext } from 'clavius.lib/src/hooks'
+import { StoryBlokContextProvider } from 'clavius.lib/src/contexts'
 import React from 'react'
 
 import { EditableComponent } from '../components'
