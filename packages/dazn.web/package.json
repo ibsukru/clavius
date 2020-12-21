@@ -9,8 +9,7 @@
     "build": "yarn build:next",
     "build:next": "next build",
     "start": "next start -p $PORT",
-    "prestart": "yarn build",
-    "test": "jest"
+    "prestart": "yarn build"
   },
   "dependencies": {
     "axios": "^0.20.0",

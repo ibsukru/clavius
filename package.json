@@ -27,7 +27,7 @@
     "compile": "tsc --noEmit",
     "start": "yarn cwd:web start",
     "stryker": "stryker run",
-    "test": "lerna run test -- -u",
+    "test": "echo 'preparing lerna run test'",
     "mutate": "mutate",
     "prestart": "yarn build"
   },

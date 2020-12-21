@@ -5,6 +5,6 @@
   "types": "index",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "yarn run babel src -d --out-dir dist --extensions '.ts'",
+    "build": "yarn run babel src -d --out-dir dist --extensions '.ts'"
   }
 }
