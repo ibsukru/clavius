@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import App from 'next/app'
 
-import { resetStyles, htmlStyles } from 'apollo.web/src/styles'
+import { resetStyles, htmlStyles } from 'clavius.lib/src/components/styles'
 
 class MyApp extends App<{}> {
   render() {
