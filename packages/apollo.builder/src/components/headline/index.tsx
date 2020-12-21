@@ -1,6 +1,10 @@
-import HeadlinePricing, { HeadlinePricingPropType } from './headlinePricing'
-import inject from './headline.storyblok'
-import Headline from './headline'
+import inject from './headline'
+
+import { Headline } from 'apollo.lib/src/components'
+import HeadlinePricing, {
+  HeadlinePricingPropType,
+} from 'apollo.lib/src/components/headline/headlinePricing'
+
 import {
   AssetBlokType,
   ImageStoryBlokType,
@@ -10,7 +14,7 @@ import {
 } from 'clavius.lib/src/components'
 
 export type HeadlineStoryBlokType = InjectStoryBlok<
-  HeadlineType,
+  typeof Headline,
   {
     signin: string
     logo: AssetBlokType
@@ -25,15 +29,6 @@ export type HeadlineStoryBlokType = InjectStoryBlok<
     }>
   }
 >
-
-export type HeadlineType = React.FunctionComponent<{
-  signin: string
-  logo: string
-  explore: string
-  bg?: string
-  pricing: HeadlinePricingPropType
-  title: string
-}>
 
 export default inject(Headline)
 

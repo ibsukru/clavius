@@ -1,30 +1,5 @@
 import HeadlinePricing, { HeadlinePricingPropType } from './headlinePricing'
-import inject from './headline.storyblok'
 import Headline from './headline'
-import {
-  AssetBlokType,
-  ImageStoryBlokType,
-  InjectStoryBlok,
-  TableBlokType,
-  TitleStoryBlokType,
-} from 'clavius.lib/src/components'
-
-export type HeadlineStoryBlokType = InjectStoryBlok<
-  HeadlineType,
-  {
-    signin: string
-    logo: AssetBlokType
-    explore: string
-    experiments: Array<{
-      key: string
-      variant: Array<
-        ImageStoryBlokType | HeadlinePricingPropType | TitleStoryBlokType
-      >
-      component: string
-      config: TableBlokType
-    }>
-  }
->
 
 export type HeadlineType = React.FunctionComponent<{
   signin: string
@@ -35,6 +10,6 @@ export type HeadlineType = React.FunctionComponent<{
   title: string
 }>
 
-export default inject(Headline)
+export default Headline
 
 export { HeadlinePricing }
