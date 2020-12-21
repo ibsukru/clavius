@@ -3,13 +3,8 @@ import {
   EditableContentType,
   InjectStoryBlok,
 } from 'clavius.lib/src/components'
-import WhatIsOn from './whatIsOn'
-import inject from './WhatIsOn.storyblok'
-
-export type WhatIsOnType = React.FunctionComponent<{
-  title: string
-  events?: Array<EditableContentType>
-}>
+import WhatIsOn, { WhatIsOnType } from 'apollo.lib/src/components/whatIsOn'
+import inject from './WhatIsOn'
 
 export type WhatIsOnStoryBlokType = InjectStoryBlok<
   WhatIsOnType,

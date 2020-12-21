@@ -1,22 +1,14 @@
-import { Fragment } from 'react'
-import { WhatIsOnEventType } from '.'
+import { WhatIsOnEventStoryBlokType } from '.'
+import { EditableComponent } from 'clavius.lib/src/components'
 
-const WhatIsOnEvent: WhatIsOnEventType = props => {
-  const blok = props
-  const { alt, src } = blok
+const WhatIsOnEventStoryBlok: WhatIsOnEventStoryBlokType = Component => props => {
+  const { blok } = props
 
   return (
-    <Fragment>
-      <style jsx>{`
-        .whatIsOnEvent-img {
-          display: block;
-        }
-      `}</style>
-      <figure>
-        <img className="whatIsOnEvent-img" src={src} alt={alt} />
-      </figure>
-    </Fragment>
+    <EditableComponent content={blok}>
+      <Component {...{ src: blok.img.filename, alt: blok.alt }} />
+    </EditableComponent>
   )
 }
 
-export default WhatIsOnEvent
+export default WhatIsOnEventStoryBlok
