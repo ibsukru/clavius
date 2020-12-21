@@ -1,4 +1,4 @@
-import { EditableContentTpe, TableBlokType } from '../../components'
+import { EditableContentTpe, TableBlokType } from 'clavius.lib/src/components'
 import { StoryBlokContextProvider, StoryBlokContext } from './storyBlokContext'
 
 export type storyBlokContextType = {

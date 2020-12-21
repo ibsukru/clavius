@@ -3,7 +3,7 @@ import { StoryBlokContextProvider } from 'clavius.web/src/contexts'
 import React from 'react'
 
 import { EditableComponent } from '../components'
-import { Page } from 'clavius.web/src/components'
+import { Page } from 'clavius.lib/src/components'
 
 const Builder = () => {
   const { storyBlok } = useStoryBlokContext()
@@ -40,7 +40,7 @@ const Builder = () => {
   return (
     <EditableComponent content={content}>
       <StoryBlokContextProvider storyBlok={storyBlok}>
-        <Page storyBlok={storyBlok} />
+        {'<Page storyBlok={storyBlok} />'}
       </StoryBlokContextProvider>
     </EditableComponent>
   )
