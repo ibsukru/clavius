@@ -5,7 +5,7 @@ import { Page } from 'apollo.web/src/components'
 
 const sbService = storyBlokService()
 
-const Index: React.FunctionComponent<{
+const Slug: React.FunctionComponent<{
   storyBlok: StoryBlokResponseType
 }> = props => {
   const { storyBlok } = props
@@ -73,4 +73,4 @@ export async function getStaticPaths({ locales }: { locales: string[] }) {
   return result
 }
 
-export default Index
+export default Slug
