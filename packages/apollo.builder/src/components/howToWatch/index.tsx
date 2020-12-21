@@ -1,15 +1,8 @@
-import HowToWatchComponent from './howToWatch'
-import inject from './howToWatch.storyblok'
-import { TableBlokType, InjectStoryBlok } from 'clavius.lib/src/components'
+import inject from './howToWatch'
 
-export type HowToWatchType = React.FunctionComponent<{
-  list?: Array<{
-    type: string
-    title: string
-    devices: string
-  }>
-  title: string
-}>
+import { HowToWatchType } from 'apollo.lib/src/components/howToWatch'
+import { HowToWatch } from 'apollo.lib/src/components'
+import { TableBlokType, InjectStoryBlok } from 'clavius.lib/src/components'
 
 export type HowToWatchStoryBlokType = InjectStoryBlok<
   HowToWatchType,
@@ -19,4 +12,4 @@ export type HowToWatchStoryBlokType = InjectStoryBlok<
   }
 >
 
-export default inject(HowToWatchComponent)
+export default inject(HowToWatch)
