@@ -1,4 +1,4 @@
-import { InjectStoryBlok } from '..'
+import { InjectStoryBlok } from 'clavius.lib/src/components'
 import Faq from './faq'
 import inject from './faq.storyblok'
 

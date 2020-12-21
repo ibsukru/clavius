@@ -1,6 +1,6 @@
 import HowToWatchComponent from './howToWatch'
 import inject from './howToWatch.storyblok'
-import { TableBlokType, InjectStoryBlok } from '..'
+import { TableBlokType, InjectStoryBlok } from 'clavius.lib/src/components'
 
 export type HowToWatchType = React.FunctionComponent<{
   list?: Array<{

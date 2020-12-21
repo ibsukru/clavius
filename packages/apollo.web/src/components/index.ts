@@ -11,8 +11,6 @@ import Placeholder from './placeholder'
 import Error from './error'
 import Personas from './personas'
 
-export * from './index.types'
-
 export {
   Rails,
   DynamicComponent,

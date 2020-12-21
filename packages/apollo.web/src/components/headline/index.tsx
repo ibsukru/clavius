@@ -7,7 +7,7 @@ import {
   InjectStoryBlok,
   TableBlokType,
   TitleStoryBlokType,
-} from '..'
+} from 'clavius.lib/src/components'
 
 export type HeadlineStoryBlokType = InjectStoryBlok<
   HeadlineType,

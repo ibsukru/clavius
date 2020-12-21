@@ -1,6 +1,7 @@
 import DynamicComponent from './dynamicComponent'
-import { InjectStoryBlokPropType } from '..'
 import Components from './dynamicComponent.components'
+
+import { InjectStoryBlokPropType } from 'clavius.lib/src/components'
 
 export type DynamicComponentType = InjectStoryBlokPropType<{}>
 

@@ -1,5 +1,5 @@
 import { FooterStoryBlokType } from '.'
-import { EditableComponent } from '..'
+import { EditableComponent } from 'clavius.lib/src/components'
 
 const FooterStoryBlok: FooterStoryBlokType = Component => ({ blok }) => {
   return (

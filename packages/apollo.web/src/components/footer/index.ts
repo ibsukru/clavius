@@ -1,6 +1,7 @@
-import { InjectStoryBlok } from '..'
-import Footer from './footer'
+import { InjectStoryBlok } from 'clavius.lib/src/components'
 import inject from './footer.storyblok'
+
+import Footer from 'clavius.lib/src/components/footer/footer'
 
 type FooterStoryBlokPropType = {
   links: Array<{ key: string; value: string; _uid: string }>

@@ -1,5 +1,5 @@
 import { FaqStoryBlokType } from '.'
-import { EditableComponent } from '..'
+import { EditableComponent } from 'clavius.lib/src/components'
 
 const FaqStoryBlok: FaqStoryBlokType = Component => ({ blok }) => {
   return (

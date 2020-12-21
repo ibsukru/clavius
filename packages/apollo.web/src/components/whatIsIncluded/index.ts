@@ -1,4 +1,4 @@
-import { InjectStoryBlok } from '..'
+import { InjectStoryBlok } from 'clavius.lib/src/components'
 import WhatIsIncluded from './whatIsIncluded'
 import inject from './whatIsIncluded.storyblok'
 

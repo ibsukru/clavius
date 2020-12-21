@@ -1,4 +1,4 @@
-import { TableBlokType, InjectStoryBlok } from '..'
+import { TableBlokType, InjectStoryBlok } from 'clavius.lib/src/components'
 import GetStarted from './getStarted'
 import inject from './getStarted.storyblok'
 

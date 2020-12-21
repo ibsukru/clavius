@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { EditableComponent, Page } from '../components'
+import { Page } from '../components'
 import { useStoryBlokContext } from 'clavius.lib/src/hooks'
-
+import { EditableComponent } from 'clavius.lib/src/components'
 import { StoryBlokContextProvider } from 'clavius.lib/src/contexts'
 
 const Builder = () => {

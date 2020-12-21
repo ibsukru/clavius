@@ -1,5 +1,5 @@
-import { EditableComponent } from '..'
 import { GetStartedStoryBlokType } from '.'
+import { EditableComponent } from 'clavius.lib/src/components'
 
 const GetStartedStoryBlok: GetStartedStoryBlokType = Component => props => {
   const { blok } = props

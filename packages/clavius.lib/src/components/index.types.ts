@@ -2,20 +2,20 @@ import SbEditable, { SbEditableContent } from 'storyblok-react'
 
 export const EditableComponent = SbEditable
 
-export type EditableContentTpe = SbEditableContent
+export type EditableContentType = SbEditableContent
 
 export type InjectStoryBlokPropType<T> = React.FunctionComponent<{
-  blok: EditableContentTpe & T
+  blok: EditableContentType & T
 }>
 
 export type InjectStoryBlok<C, T> = (
   Component: C,
 ) => React.FunctionComponent<{
-  blok: EditableContentTpe & T
+  blok: EditableContentType & T
 }>
 
 export type TableBlokType = {
-  tbody: Array<{ body: Array<EditableContentTpe & { value: string }> }>
+  tbody: Array<{ body: Array<EditableContentType & { value: string }> }>
 }
 
 export type ImageStoryBlokType = {

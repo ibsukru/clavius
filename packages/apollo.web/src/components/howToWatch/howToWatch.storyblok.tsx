@@ -1,5 +1,5 @@
 import { HowToWatchStoryBlokType } from '.'
-import { EditableComponent } from '..'
+import { EditableComponent } from 'clavius.lib/src/components'
 
 const HowToWatchStoryBlok: HowToWatchStoryBlokType = Component => props => {
   const { blok } = props

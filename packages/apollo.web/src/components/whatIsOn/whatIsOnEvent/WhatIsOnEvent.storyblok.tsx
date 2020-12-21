@@ -1,5 +1,5 @@
 import { WhatIsOnEventStoryBlokType } from '.'
-import { EditableComponent } from '../..'
+import { EditableComponent } from 'clavius.lib/src/components'
 
 const WhatIsOnEventStoryBlok: WhatIsOnEventStoryBlokType = Component => props => {
   const { blok } = props
