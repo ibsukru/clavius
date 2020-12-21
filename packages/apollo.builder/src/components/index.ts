@@ -8,7 +8,6 @@ import Faq from './faq'
 import Footer from './footer'
 import DynamicComponent from './dynamicComponent'
 import Placeholder from './placeholder'
-import Error from './error'
 import Personas from './personas'
 
 export {
@@ -22,6 +21,5 @@ export {
   HowToWatch,
   Faq as FAQ,
   Footer,
-  Error,
   Personas,
 }

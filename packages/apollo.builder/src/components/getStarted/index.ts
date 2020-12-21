@@ -1,6 +1,8 @@
+import inject from './getStarted'
+
 import { TableBlokType, InjectStoryBlok } from 'clavius.lib/src/components'
-import GetStarted from './getStarted'
-import inject from './getStarted.storyblok'
+import { GetStarted } from 'apollo.lib/src/components'
+import { GetStartedType } from 'apollo.lib/src/components/getStarted'
 
 export type GetStartedStoryBlokType = InjectStoryBlok<
   GetStartedType,
@@ -9,10 +11,5 @@ export type GetStartedStoryBlokType = InjectStoryBlok<
     steps: TableBlokType
   }
 >
-
-export type GetStartedType = React.FunctionComponent<{
-  title: string
-  steps?: Array<{ title: string; description: string }>
-}>
 
 export default inject(GetStarted)
