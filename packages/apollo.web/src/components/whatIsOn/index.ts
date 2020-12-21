@@ -1,5 +1,5 @@
+import { personaType } from 'clavius.lib/src/contexts/personaContext'
 import { EditableContentTpe, InjectStoryBlok } from '..'
-import { personaType } from '../../contexts/personaContext'
 import WhatIsOn from './whatIsOn'
 import inject from './WhatIsOn.storyblok'
 

@@ -1,4 +1,4 @@
-import { StoryBlokResponseType } from 'apollo.web/src/contexts/storyBlokContext'
+import { StoryBlokResponseType } from 'clavius.lib/src/contexts/storyBlokContext'
 import withContext from './withContext'
 
 export type withContextPayloadType = {

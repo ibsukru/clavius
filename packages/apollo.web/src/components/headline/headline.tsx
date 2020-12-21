@@ -1,9 +1,8 @@
 import React from 'react'
 import Markdown from 'react-markdown'
 
-import { Personas } from '..'
-import { usePersonaContext } from '../../hooks'
 import { HeadlinePricing, HeadlineType } from '.'
+import usePersonaContext from 'clavius.lib/src/hooks/usePersonaContext'
 
 const Headline: HeadlineType = props => {
   const { signin, logo, explore, bg, pricing, title } = props

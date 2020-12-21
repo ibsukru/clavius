@@ -1,6 +1,6 @@
+import { usePersonaContext } from 'clavius.lib/src/hooks'
 import { WhatIsOnStoryBlokType } from '.'
 import { EditableComponent } from '..'
-import { usePersonaContext } from '../../hooks'
 
 const WhatIsOnStoryBlok: WhatIsOnStoryBlokType = Component => props => {
   const { blok } = props

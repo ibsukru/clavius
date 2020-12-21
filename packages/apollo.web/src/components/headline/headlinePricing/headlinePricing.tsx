@@ -1,6 +1,6 @@
+import useFeatureToggleContext from 'clavius.lib/src/hooks/useFeatureToggleContext'
 import Markdown from 'react-markdown'
-import { HeadlinePricingPropType, HeadlinePricingType } from '.'
-import { useFeatureToggleContext } from '../../../hooks'
+import { HeadlinePricingType } from '.'
 
 const HeadlinePricing: HeadlinePricingType = props => {
   const { featureToggles } = useFeatureToggleContext()

@@ -1,5 +1,5 @@
-import { featureTogglesType } from '../../../contexts/featureToggleContext'
-import { StoryBlokResponseType } from '../../../contexts/storyBlokContext'
+import { featureTogglesType } from '../contexts/featureToggleContext'
+import { StoryBlokResponseType } from '../contexts/storyBlokContext'
 import mapFeatureToggles from './mapFeatureToggles'
 
 export type mapFeatureTogglesType = (

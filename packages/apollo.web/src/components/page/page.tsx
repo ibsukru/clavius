@@ -1,7 +1,7 @@
+import { StoryBlokResponseType } from 'clavius.lib/src/contexts/storyBlokContext'
 import React from 'react'
 
 import { DynamicComponent } from '..'
-import { StoryBlokResponseType } from '../../contexts/storyBlokContext'
 
 const Page: React.FunctionComponent<{
   storyBlok: StoryBlokResponseType

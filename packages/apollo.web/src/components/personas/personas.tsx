@@ -1,5 +1,5 @@
-import { usePersonaContext } from '../../hooks'
 import classNames from 'classnames'
+import usePersonaContext from 'clavius.lib/src/hooks/usePersonaContext'
 
 const Personas: React.FunctionComponent<{ title?: string; size?: string }> = ({
   title,

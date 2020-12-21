@@ -1,4 +1,4 @@
-import { storyBlokComponentType } from '../../../contexts/featureToggleContext'
+import { storyBlokComponentType } from '../contexts/featureToggleContext'
 
 export const getVariants: <T extends { component: string }>(
   experiments: {

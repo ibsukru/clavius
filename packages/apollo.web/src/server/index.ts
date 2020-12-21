@@ -5,8 +5,8 @@ import Server from 'next/dist/next-server/server/next-server'
 import bodyParser from 'body-parser'
 import next from 'next'
 import storyBlokService from './storyblokService'
-import withContext from './withContext'
-import { StoryBlokResponseType } from '../contexts/storyBlokContext'
+import withContext from 'clavius.lib/src/withContext'
+import { StoryBlokResponseType } from 'clavius.lib/src/contexts/storyBlokContext'
 
 const PORT = process.env.PORT || '1123'
 

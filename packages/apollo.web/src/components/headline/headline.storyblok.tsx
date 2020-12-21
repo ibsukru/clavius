@@ -1,7 +1,9 @@
+import getVariants from 'clavius.lib/src/getVariants'
+import normalizeVariants from 'clavius.lib/src/normalizeVariants'
+import usePersonaContext from 'clavius.lib/src/hooks/usePersonaContext'
+
 import { HeadlineStoryBlokType } from '.'
 import { EditableComponent, ImageStoryBlokType, TitleStoryBlokType } from '..'
-import { usePersonaContext } from '../../hooks'
-import { getVariants, normalizeVariants } from '../../server/shared'
 import { HeadlinePricingPropType } from './headlinePricing'
 
 const HeadlineStoryBlok: HeadlineStoryBlokType = Component => props => {

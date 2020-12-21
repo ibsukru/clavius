@@ -1,5 +1,4 @@
-import mapPersonas from 'apollo.web/src/server/shared/mapPersonas'
-import mapFeatureToggles from 'apollo.web/src/server/shared/mapFeatureToggles'
+import mapFeatureToggles from 'clavius.lib/src/mapFeatureToggles'
 
 import defaultsDeep from 'lodash.defaultsdeep'
 
@@ -12,6 +11,7 @@ import {
 } from '.'
 
 import { PersonaContextProvider, FeatureToggleContextProvider } from '..'
+import mapPersonas from '../../mapPersonas'
 
 export const StoryBlokContext = createContext<StoryBlokContextType>({})
 
