@@ -4,7 +4,7 @@ import { EditableComponent } from '..'
 const FaqStoryBlok: FaqStoryBlokType = Component => ({ blok }) => {
   return (
     <EditableComponent content={blok}>
-      <Component {...{ ...blok }} />
+      <Component {...{ ...blok, key: blok._uid }} />
     </EditableComponent>
   )
 }
