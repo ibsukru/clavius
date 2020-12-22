@@ -10,7 +10,6 @@ const withContext: (ctx: { request: IncomingMessage }) => withContextType = (
 ) => ({
   get: () => {
     const request = ctx.request
-
     return {
       storyBlok: request[keys.storyBlok],
       locale: request[keys.locale],

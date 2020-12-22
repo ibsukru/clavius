@@ -9,15 +9,31 @@ import {
 } from 'clavius.lib/src/contexts'
 
 import { StoryBlokResponseType } from 'clavius.lib/src/contexts/storyBlokContext'
-import withContext from 'clavius.lib/src/withContext'
+import { storyBlokService } from 'clavius.lib/src'
 
 class MyApp extends App<{ storyBlok: StoryBlokResponseType; locale: string }> {
-  static async getInitialProps({ Component, ctx }: AppContext) {
-    const request = ctx.req as IncomingMessage
+  static async getInitialProps({ Component, ctx, router }: AppContext) {
+    const sbService = storyBlokService()
 
-    const context = withContext({ request })
-    const storyBlok = context.getStoryBlok('help')
-    const locale = context.getLocale()
+    const storyBlokLocale = router.query['_storyblok_lang'] as
+      | string
+      | undefined
+
+    const locale =
+      storyBlokLocale?.replace('default', '').replace('undefined', '') ||
+      router.locale ||
+      'en-GL'
+
+    const slug = 'help'
+
+    const storyBlok = await (async () => {
+      try {
+        return await sbService.get(`cdn/stories/${locale}/${slug}`, {})
+      } catch (error) {
+        console.error(`🚀 ~ error`, error)
+        throw error
+      }
+    })()
 
     return {
       pageProps: Component.getInitialProps
