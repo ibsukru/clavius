@@ -14,7 +14,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "clavius.lib": "1.0.0",
     "apollo.lib": "1.0.0",
