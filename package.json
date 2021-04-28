@@ -11,9 +11,9 @@
     "packages/*"
   ],
   "engines": {
-    "node": "14.x",
+    "node": ">=14.x",
     "yarn": "1.x",
-    "npm": "6.x"
+    "npm": ">=6.x"
   },
   "scripts": {
     "lint": "eslint 'packages/**/*.{ts,tsx,js,jsx}'",
@@ -21,7 +21,8 @@
     "cwd": "yarn --cwd",
     "cwd:web": "yarn cwd packages/clavius.www",
     "cwd:phoenix:builder": "yarn cwd packages/phoenix.builder",
-    "dev": "yarn cwd:phoenix:builder dev",
+    "cwd:apollo:builder": "yarn cwd packages/apollo.builder",
+    "dev": "yarn cwd:apollo:builder dev",
     "clean:dist": "rm -rf packages/**/dist*",
     "build": "yarn clean:dist && lerna run build",
     "build:dev": "yarn cwd packages/clavius.www && yarn build",

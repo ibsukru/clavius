@@ -1,4 +1,4 @@
-import inject from './WhatIsOnEvent'
+import inject from './whatIsOnEvent'
 
 import { AssetBlokType, InjectStoryBlok } from 'clavius.lib/src/components'
 

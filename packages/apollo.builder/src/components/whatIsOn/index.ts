@@ -4,7 +4,7 @@ import {
   InjectStoryBlok,
 } from 'clavius.lib/src/components'
 import WhatIsOn, { WhatIsOnType } from 'apollo.lib/src/components/whatIsOn'
-import inject from './WhatIsOn'
+import inject from './whatIsOn'
 
 export type WhatIsOnStoryBlokType = InjectStoryBlok<
   WhatIsOnType,
