@@ -9,7 +9,7 @@
     "build": "echo 'building' & yarn build:server & yarn build:next",
     "build:next": "next build",
     "build:server": "yarn run babel src -d --out-dir dist --extensions '.ts,.tsx'",
-    "start": "node dist/ser  er",
+    "start": "node dist/server",
     "prestart": "yarn build",
     "test": "jest"
   },

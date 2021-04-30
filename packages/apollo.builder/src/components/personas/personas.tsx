@@ -14,7 +14,7 @@ const Personas: React.FunctionComponent<{ title?: string; size?: string }> = ({
     default: '🍺',
   }
 
-  if (!favoriteSport) return null
+  // if (!favoriteSport) return null
 
   return (
     <div className="personas">
@@ -39,11 +39,9 @@ const Personas: React.FunctionComponent<{ title?: string; size?: string }> = ({
           margin-right: 20px;
         }
       `}</style>
-
       <span className="personas-hint">{title}</span>
-
       {['default', 'boxing', 'basketball', 'cycling'].map(item => {
-        const active = favoriteSport.toUpperCase() === item.toUpperCase()
+        const active = favoriteSport?.toUpperCase() === item.toUpperCase()
 
         return (
           <a
