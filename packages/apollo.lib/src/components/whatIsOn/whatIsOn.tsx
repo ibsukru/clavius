@@ -1,5 +1,6 @@
 import { WhatIsOnType } from '.'
 import { DynamicComponent } from '..'
+import WhatIsOnEvent from './whatIsOnEvent'
 
 const WhatIsOn: WhatIsOnType = props => {
   const { title, events } = props
@@ -46,7 +47,8 @@ const WhatIsOn: WhatIsOnType = props => {
       <ul className="whatIsOn-events">
         {events?.map(nestedBlok => (
           <li className="whatIsOn-event" key={nestedBlok._uid}>
-            <DynamicComponent blok={nestedBlok} />
+            <WhatIsOnEvent src={nestedBlok.img.filename} alt={nestedBlok.alt} />
+            {/* <DynamicComponent blok={nestedBlok} /> */}
           </li>
         ))}
       </ul>

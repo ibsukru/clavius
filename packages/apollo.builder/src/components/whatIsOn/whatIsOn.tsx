@@ -7,9 +7,9 @@ const WhatIsOnStoryBlok: WhatIsOnStoryBlokType = Component => props => {
 
   const { key } = usePersonaContext()
 
-  const { personas } = blok
+  const { persona } = blok
 
-  if (!personas?.includes(key)) return null
+  if (!persona?.includes(key)) return null
 
   return (
     <EditableComponent content={blok}>

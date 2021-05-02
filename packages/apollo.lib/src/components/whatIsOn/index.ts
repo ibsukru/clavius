@@ -3,7 +3,7 @@ import WhatIsOn from './whatIsOn'
 
 export type WhatIsOnType = React.FunctionComponent<{
   title: string
-  events?: Array<EditableContentType>
+  events?: Array<{ _uid: string; alt: string; img: { filename: string } }>
 }>
 
 export default WhatIsOn

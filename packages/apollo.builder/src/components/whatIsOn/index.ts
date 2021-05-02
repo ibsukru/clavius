@@ -10,7 +10,7 @@ export type WhatIsOnStoryBlokType = InjectStoryBlok<
   WhatIsOnType,
   {
     title: string
-    events?: EditableContentType[]
+    events?: Array<{ _uid: string; alt: string; img: { filename: string } }>
     personas?: personaType[]
   }
 >
