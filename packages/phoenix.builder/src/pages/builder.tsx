@@ -3,15 +3,9 @@ import { StoryBlokContextProvider } from 'clavius.lib/src/contexts'
 import React from 'react'
 
 import { EditableComponent } from '../components'
-import { Page } from 'clavius.lib/src/components'
 
 const Builder = () => {
   const { storyBlok } = useStoryBlokContext()
-  console.log(
-    `🚀 ~ file: builder.tsx ~ line 10 ~ Builder ~ storyBlok`,
-    storyBlok,
-  )
-
   const story = storyBlok?.data?.story
 
   if (!storyBlok || !story) {
