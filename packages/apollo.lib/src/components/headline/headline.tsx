@@ -2,16 +2,9 @@ import React from 'react'
 import Markdown from 'react-markdown'
 
 import { HeadlinePricing, HeadlineType } from '.'
-import usePersonaContext from 'clavius.lib/src/hooks/usePersonaContext'
 
 const Headline: HeadlineType = props => {
   const { signin, logo, explore, bg, pricing, title } = props
-
-  const { favoriteSport } = usePersonaContext()
-  console.log(
-    `🚀 ~ file: headline.tsx ~ line 11 ~ favoriteSport`,
-    favoriteSport,
-  )
 
   return (
     <div className="headline">
