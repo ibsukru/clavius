@@ -9,7 +9,7 @@
     "build": "yarn build:server & yarn build:next",
     "build:next": "next build",
     "build:server": "yarn run babel src -d --out-dir dist --extensions '.ts,.tsx'",
-    "start": "next start -p $PORT",
+    "start": "next start -p 3000",
     "prestart": "yarn build"
   },
   "dependencies": {
