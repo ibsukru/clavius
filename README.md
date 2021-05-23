@@ -6,3 +6,4 @@ https://user-images.githubusercontent.com/1394705/119268343-ca925700-bbf2-11eb-8
 
 https://user-images.githubusercontent.com/1394705/119268123-d0d40380-bbf1-11eb-89f1-bc12cbfbfa6f.mp4
 
+libs are shared componenets, builders are mappers between storyblok and libs
